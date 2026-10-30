@@ -1,0 +1,5950 @@
+{
+ "classes": [
+  1,
+  2,
+  3,
+  4,
+  5
+ ],
+ "models": {
+  "realtime": {
+   "file": "csat_ann_realtime.keras",
+   "num_cols": [
+    "Response_Log_Min",
+    "Response_Unknown",
+    "Hour_Sin",
+    "Hour_Cos",
+    "Has_Order_Id",
+    "Order_Age_Log_Days",
+    "Has_Price",
+    "Price_Log"
+   ],
+   "with_text": false,
+   "alert_threshold": 0.2,
+   "config": {
+    "units": "(256, 128, 64)",
+    "dropout": "0.3",
+    "l2": "0.0",
+    "lr": "0.001",
+    "batch": "512",
+    "weights": "none",
+    "text_tokens": "3000",
+    "text_units": "64"
+   }
+  },
+  "with_remarks": {
+   "file": "csat_ann_with_remarks.keras",
+   "num_cols": [
+    "Response_Log_Min",
+    "Response_Unknown",
+    "Hour_Sin",
+    "Hour_Cos",
+    "Has_Order_Id",
+    "Order_Age_Log_Days",
+    "Has_Price",
+    "Price_Log",
+    "Survey_Lag_Days",
+    "Remark_Log_Words"
+   ],
+   "with_text": true,
+   "alert_threshold": 0.35,
+   "config": {
+    "units": "(256, 128, 64)",
+    "dropout": "0.4",
+    "l2": "0.0001",
+    "lr": "0.001",
+    "batch": "256",
+    "weights": "sqrt",
+    "text_tokens": "2000",
+    "text_units": "32"
+   }
+  }
+ },
+ "test_scores": {
+  "logistic regression, with remarks, tuned": {
+   "accuracy": 0.7265,
+   "macro F1": 0.261,
+   "weighted F1": 0.6426,
+   "QWK": 0.3847,
+   "MAE (expected score)": 0.8191,
+   "low-CSAT ROC-AUC": 0.8125,
+   "low-CSAT PR-AUC": 0.5368
+  },
+  "ANN real time tuned": {
+   "accuracy": 0.6973,
+   "macro F1": 0.2,
+   "weighted F1": 0.5932,
+   "QWK": 0.1236,
+   "MAE (expected score)": 0.9688,
+   "low-CSAT ROC-AUC": 0.7254,
+   "low-CSAT PR-AUC": 0.3312
+  },
+  "ANN with remarks v1": {
+   "accuracy": 0.727,
+   "macro F1": 0.2615,
+   "weighted F1": 0.6431,
+   "QWK": 0.3873,
+   "MAE (expected score)": 0.8041,
+   "low-CSAT ROC-AUC": 0.8113,
+   "low-CSAT PR-AUC": 0.5356
+  },
+  "ANN with remarks tuned": {
+   "accuracy": 0.7196,
+   "macro F1": 0.2631,
+   "weighted F1": 0.6422,
+   "QWK": 0.4075,
+   "MAE (expected score)": 0.9962,
+   "low-CSAT ROC-AUC": 0.8081,
+   "low-CSAT PR-AUC": 0.5336
+  }
+ },
+ "options": {
+  "channel_name": [
+   "Email",
+   "Inbound",
+   "Outcall"
+  ],
+  "category": [
+   "App/website",
+   "Cancellation",
+   "Feedback",
+   "Offers & Cashback",
+   "Onboarding related",
+   "Order Related",
+   "Others",
+   "Payments related",
+   "Product Queries",
+   "Refund Related",
+   "Returns",
+   "Shopzilla Related"
+  ],
+  "Sub-category": [
+   "Account updation",
+   "Affiliate Offers",
+   "App/website Related",
+   "Billing Related",
+   "COD Refund Details",
+   "Call back request",
+   "Call disconnected",
+   "Card/EMI",
+   "Commission related",
+   "Customer Requested Modifications",
+   "Damaged",
+   "Delayed",
+   "Exchange / Replacement",
+   "Fraudulent User",
+   "General Enquiry",
+   "Installation/demo",
+   "Instant discount",
+   "Invoice request",
+   "Issues with Shopzilla App",
+   "Life Insurance",
+   "Missing",
+   "Non Order related",
+   "Not Needed",
+   "Online Payment Issues",
+   "Order Verification",
+   "Order status enquiry",
+   "Other Account Related Issues",
+   "Other Cashback",
+   "Others",
+   "PayLater related",
+   "Payment pending",
+   "Payment related Queries",
+   "Priority delivery",
+   "Product Specific Information",
+   "Product related Issues",
+   "Refund Enquiry",
+   "Refund Related Issues",
+   "Return cancellation",
+   "Return request",
+   "Reverse Pickup Enquiry",
+   "Self-Help",
+   "Seller Cancelled Order",
+   "Seller onboarding",
+   "Service Center - Service Denial",
+   "Service Centres Related",
+   "Shopzila Premium Related",
+   "Shopzilla Rewards",
+   "Signup Issues",
+   "Technician Visit",
+   "UnProfessional Behaviour",
+   "Unable to Login",
+   "Unable to track",
+   "Wallet related",
+   "Warranty related",
+   "Wrong",
+   "e-Gift Voucher"
+  ],
+  "Product_category": [
+   "Affiliates",
+   "Books & General merchandise",
+   "Electronics",
+   "Furniture",
+   "GiftCard",
+   "Home",
+   "Home Appliences",
+   "LifeStyle",
+   "Mobile",
+   "Unknown"
+  ],
+  "Supervisor": [
+   "Abigail Suzuki",
+   "Aiden Patel",
+   "Alexander Tanaka",
+   "Amelia Tanaka",
+   "Austin Johnson",
+   "Ava Wong",
+   "Brayden Wong",
+   "Carter Park",
+   "Charlotte Suzuki",
+   "Dylan Kim",
+   "Elijah Yamaguchi",
+   "Emily Yamashita",
+   "Emma Park",
+   "Ethan Nakamura",
+   "Ethan Tan",
+   "Evelyn Kimura",
+   "Harper Wong",
+   "Isabella Wong",
+   "Jackson Park",
+   "Jacob Sato",
+   "Landon Tanaka",
+   "Layla Taniguchi",
+   "Lily Chen",
+   "Logan Lee",
+   "Lucas Singh",
+   "Madison Kim",
+   "Mason Gupta",
+   "Mia Patel",
+   "Mia Yamamoto",
+   "Nathan Patel",
+   "Noah Patel",
+   "Oliver Nguyen",
+   "Olivia Suzuki",
+   "Olivia Wang",
+   "Scarlett Chen",
+   "Sophia Chen",
+   "Sophia Sato",
+   "William Park",
+   "Wyatt Kim",
+   "Zoe Yamamoto"
+  ],
+  "Manager": [
+   "Emily Chen",
+   "Jennifer Nguyen",
+   "John Smith",
+   "Michael Lee",
+   "Olivia Tan",
+   "William Kim"
+  ],
+  "Tenure Bucket": [
+   "0-30",
+   "31-60",
+   "61-90",
+   ">90",
+   "On Job Training"
+  ],
+  "Agent Shift": [
+   "Afternoon",
+   "Evening",
+   "Morning",
+   "Night",
+   "Split"
+  ],
+  "Reported_Weekday": [
+   "Friday",
+   "Monday",
+   "Saturday",
+   "Sunday",
+   "Thursday",
+   "Tuesday",
+   "Wednesday"
+  ]
+ },
+ "cities": [
+  "AGARTALA",
+  "AGRA",
+  "AHMEDABAD",
+  "ALIGARH",
+  "ALLAHABAD",
+  "AMRITSAR",
+  "ARRAH",
+  "AURANGABAD",
+  "AZAMGARH",
+  "BALESHWAR",
+  "BALLIA",
+  "BANGALORE",
+  "BANKURA",
+  "BARDHAMAN",
+  "BAREILLY",
+  "BASTI",
+  "BEGUSARAI",
+  "BERHAMPORE",
+  "BERHAMPUR",
+  "BHAGALPUR",
+  "BHIWANDI",
+  "BHOPAL",
+  "BHUBANESWAR",
+  "BIHAR SHARIF",
+  "BILASPUR",
+  "CHANDIGARH",
+  "CHATRAPUR",
+  "CHENNAI",
+  "CUTTACK",
+  "DARBHANGA",
+  "DEHRADUN",
+  "DHANBAD",
+  "DHENKANAL",
+  "DURG",
+  "ERNAKULAM",
+  "FAIZABAD",
+  "FARIDABAD",
+  "FARRUKHABAD",
+  "GANDHINAGAR",
+  "GAUTAM BUDDHA NAGAR",
+  "GAYA",
+  "GHAZIABAD",
+  "GORAKHPUR",
+  "GREATER NOIDA",
+  "GUNTUR",
+  "GURGAON",
+  "GUWAHATI",
+  "GWALIOR",
+  "HAMIRPUR",
+  "HARIDWAR",
+  "HOWRAH",
+  "HYDERABAD",
+  "INDORE",
+  "JABALPUR",
+  "JAIPUR",
+  "JALANDHAR",
+  "JAMMU",
+  "JAMNAGAR",
+  "JAMSHEDPUR",
+  "JAUNPUR",
+  "JHANSI",
+  "JHARSUGUDA",
+  "JHUJHUNU",
+  "JODHPUR",
+  "KANPUR",
+  "KATIHAR",
+  "KHAGARIA",
+  "KOLKATA",
+  "KOLKATTA",
+  "KOTA",
+  "LUCKNOW",
+  "LUDHIANA",
+  "MADHUBANI",
+  "MAHESANA",
+  "MATHURA",
+  "MEDINIPUR",
+  "MEERUT",
+  "MORADABAD",
+  "MUMBAI",
+  "MUZAFFARNAGAR",
+  "MUZAFFARPUR",
+  "NAGAUR",
+  "NAGPUR",
+  "NASHIK",
+  "NAVI MUMBAI",
+  "NAWADA",
+  "NEW DELHI",
+  "PANVEL",
+  "PATNA",
+  "PUNE",
+  "PURI",
+  "PURNIA",
+  "RAIPUR",
+  "RAJKOT",
+  "RANCHI",
+  "REWA",
+  "ROHTAK",
+  "ROORKEE",
+  "SAHARANPUR",
+  "SAHARSA",
+  "SAMASTIPUR",
+  "SHAHJAHANPUR",
+  "SIKAR",
+  "SITAMARHI",
+  "SRINAGAR",
+  "SURAT",
+  "THANE",
+  "UDAIPUR",
+  "UNKNOWN",
+  "VADODARA",
+  "VAPI",
+  "VARANASI",
+  "VISHAKHAPATNAM"
+ ],
+ "subcategories": {
+  "App/website": [
+   "App/website Related",
+   "Issues with Shopzilla App"
+  ],
+  "Cancellation": [
+   "Not Needed",
+   "Return cancellation"
+  ],
+  "Feedback": [
+   "UnProfessional Behaviour"
+  ],
+  "Offers & Cashback": [
+   "Affiliate Offers",
+   "Instant discount",
+   "Other Cashback"
+  ],
+  "Onboarding related": [
+   "Commission related",
+   "Seller onboarding"
+  ],
+  "Order Related": [
+   "Customer Requested Modifications",
+   "Delayed",
+   "General Enquiry",
+   "Installation/demo",
+   "Invoice request",
+   "Order Verification",
+   "Order status enquiry",
+   "Priority delivery",
+   "Seller Cancelled Order",
+   "Unable to track"
+  ],
+  "Others": [
+   "Call back request",
+   "Call disconnected",
+   "Non Order related",
+   "Others"
+  ],
+  "Payments related": [
+   "Billing Related",
+   "Card/EMI",
+   "Online Payment Issues",
+   "PayLater related",
+   "Payment pending",
+   "Payment related Queries",
+   "Wallet related",
+   "e-Gift Voucher"
+  ],
+  "Product Queries": [
+   "Life Insurance",
+   "Product Specific Information",
+   "Warranty related"
+  ],
+  "Refund Related": [
+   "COD Refund Details",
+   "Refund Enquiry",
+   "Refund Related Issues"
+  ],
+  "Returns": [
+   "Damaged",
+   "Exchange / Replacement",
+   "Fraudulent User",
+   "General Enquiry",
+   "Missing",
+   "Product related Issues",
+   "Return request",
+   "Reverse Pickup Enquiry",
+   "Self-Help",
+   "Service Center - Service Denial",
+   "Service Centres Related",
+   "Technician Visit",
+   "Wrong"
+  ],
+  "Shopzilla Related": [
+   "Account updation",
+   "General Enquiry",
+   "Other Account Related Issues",
+   "Shopzila Premium Related",
+   "Shopzilla Rewards",
+   "Signup Issues",
+   "Unable to Login"
+  ]
+ },
+ "agents": {
+  "Aaron Edwards": {
+   "Supervisor": "Mia Patel",
+   "Manager": "Emily Chen"
+  },
+  "Aaron Romero": {
+   "Supervisor": "Mason Gupta",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Abigail Gonzalez": {
+   "Supervisor": "Jacob Sato",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Adam Barnett": {
+   "Supervisor": "Abigail Suzuki",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Adam Hammond": {
+   "Supervisor": "Olivia Suzuki",
+   "Manager": "John Smith"
+  },
+  "Adam Henderson": {
+   "Supervisor": "Ava Wong",
+   "Manager": "William Kim"
+  },
+  "Adam Hernandez": {
+   "Supervisor": "Nathan Patel",
+   "Manager": "Emily Chen"
+  },
+  "Adam Schwartz": {
+   "Supervisor": "Alexander Tanaka",
+   "Manager": "William Kim"
+  },
+  "Adam Torres": {
+   "Supervisor": "Ethan Tan",
+   "Manager": "Michael Lee"
+  },
+  "Adrian Branch": {
+   "Supervisor": "Carter Park",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Adrian Johnson": {
+   "Supervisor": "Nathan Patel",
+   "Manager": "Emily Chen"
+  },
+  "Adrian Richards": {
+   "Supervisor": "Zoe Yamamoto",
+   "Manager": "John Smith"
+  },
+  "Adriana Adams": {
+   "Supervisor": "Sophia Sato",
+   "Manager": "John Smith"
+  },
+  "Alan Cruz": {
+   "Supervisor": "Isabella Wong",
+   "Manager": "Emily Chen"
+  },
+  "Alan Davies": {
+   "Supervisor": "Ava Wong",
+   "Manager": "William Kim"
+  },
+  "Alan Sweeney": {
+   "Supervisor": "Madison Kim",
+   "Manager": "Michael Lee"
+  },
+  "Albert Thornton": {
+   "Supervisor": "Lucas Singh",
+   "Manager": "John Smith"
+  },
+  "Alexa Mcpherson": {
+   "Supervisor": "Brayden Wong",
+   "Manager": "John Smith"
+  },
+  "Alexander Marshall": {
+   "Supervisor": "Carter Park",
+   "Manager": "Michael Lee"
+  },
+  "Alexander Mata": {
+   "Supervisor": "Mason Gupta",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Alexander Saunders": {
+   "Supervisor": "Noah Patel",
+   "Manager": "Michael Lee"
+  },
+  "Alexandra Barron": {
+   "Supervisor": "Austin Johnson",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Alexandra Davis": {
+   "Supervisor": "Mason Gupta",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Alexandra Harris": {
+   "Supervisor": "Emma Park",
+   "Manager": "John Smith"
+  },
+  "Alexandra Reynolds": {
+   "Supervisor": "Zoe Yamamoto",
+   "Manager": "John Smith"
+  },
+  "Alexis Campbell": {
+   "Supervisor": "Elijah Yamaguchi",
+   "Manager": "Michael Lee"
+  },
+  "Alexis Murray": {
+   "Supervisor": "Brayden Wong",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Alexis Parrish DVM": {
+   "Supervisor": "Jacob Sato",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Alicia Burton": {
+   "Supervisor": "Mia Patel",
+   "Manager": "Emily Chen"
+  },
+  "Alicia Payne": {
+   "Supervisor": "Olivia Suzuki",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Alicia Schultz": {
+   "Supervisor": "Lucas Singh",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Alisha Campos": {
+   "Supervisor": "Jacob Sato",
+   "Manager": "Emily Chen"
+  },
+  "Alisha Goodwin": {
+   "Supervisor": "Ava Wong",
+   "Manager": "William Kim"
+  },
+  "Allen Bowers": {
+   "Supervisor": "Olivia Wang",
+   "Manager": "John Smith"
+  },
+  "Allison Huang": {
+   "Supervisor": "Logan Lee",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Allison Mccall": {
+   "Supervisor": "Noah Patel",
+   "Manager": "Michael Lee"
+  },
+  "Allison Wheeler": {
+   "Supervisor": "Emily Yamashita",
+   "Manager": "John Smith"
+  },
+  "Alyssa Ford": {
+   "Supervisor": "Carter Park",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Alyssa Jones": {
+   "Supervisor": "Zoe Yamamoto",
+   "Manager": "John Smith"
+  },
+  "Alyssa Mcpherson": {
+   "Supervisor": "Brayden Wong",
+   "Manager": "Michael Lee"
+  },
+  "Amanda Benjamin": {
+   "Supervisor": "Amelia Tanaka",
+   "Manager": "Emily Chen"
+  },
+  "Amanda Brown": {
+   "Supervisor": "Emily Yamashita",
+   "Manager": "John Smith"
+  },
+  "Amanda Cook": {
+   "Supervisor": "Emma Park",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Amanda Hughes": {
+   "Supervisor": "Mia Patel",
+   "Manager": "Emily Chen"
+  },
+  "Amanda Martinez": {
+   "Supervisor": "Elijah Yamaguchi",
+   "Manager": "John Smith"
+  },
+  "Amanda Miller": {
+   "Supervisor": "Abigail Suzuki",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Amanda Morse": {
+   "Supervisor": "Ava Wong",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Amanda Proctor": {
+   "Supervisor": "Noah Patel",
+   "Manager": "Emily Chen"
+  },
+  "Amanda Rodriguez": {
+   "Supervisor": "Abigail Suzuki",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Amanda Sloan": {
+   "Supervisor": "Elijah Yamaguchi",
+   "Manager": "John Smith"
+  },
+  "Amber Brown": {
+   "Supervisor": "Carter Park",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Amy Bell": {
+   "Supervisor": "Wyatt Kim",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Amy Berry": {
+   "Supervisor": "Elijah Yamaguchi",
+   "Manager": "John Smith"
+  },
+  "Amy Burke": {
+   "Supervisor": "Sophia Chen",
+   "Manager": "William Kim"
+  },
+  "Amy Calderon": {
+   "Supervisor": "Elijah Yamaguchi",
+   "Manager": "Michael Lee"
+  },
+  "Amy Campbell": {
+   "Supervisor": "Alexander Tanaka",
+   "Manager": "Michael Lee"
+  },
+  "Amy Flores": {
+   "Supervisor": "Carter Park",
+   "Manager": "Michael Lee"
+  },
+  "Amy Gonzalez": {
+   "Supervisor": "Logan Lee",
+   "Manager": "Emily Chen"
+  },
+  "Amy Mendez": {
+   "Supervisor": "Sophia Sato",
+   "Manager": "John Smith"
+  },
+  "Amy Vazquez": {
+   "Supervisor": "Elijah Yamaguchi",
+   "Manager": "Michael Lee"
+  },
+  "Amy Watson": {
+   "Supervisor": "Lucas Singh",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Andre Adams": {
+   "Supervisor": "Carter Park",
+   "Manager": "Michael Lee"
+  },
+  "Andre Hunter": {
+   "Supervisor": "Lily Chen",
+   "Manager": "Michael Lee"
+  },
+  "Andrea Beck": {
+   "Supervisor": "Evelyn Kimura",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Andrea Conley": {
+   "Supervisor": "Noah Patel",
+   "Manager": "Michael Lee"
+  },
+  "Andrea Hart": {
+   "Supervisor": "Madison Kim",
+   "Manager": "Emily Chen"
+  },
+  "Andrea Oconnor": {
+   "Supervisor": "Mason Gupta",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Andrea Peterson": {
+   "Supervisor": "Nathan Patel",
+   "Manager": "Michael Lee"
+  },
+  "Andrea Rasmussen": {
+   "Supervisor": "Austin Johnson",
+   "Manager": "William Kim"
+  },
+  "Andrea Suarez": {
+   "Supervisor": "Ethan Tan",
+   "Manager": "Michael Lee"
+  },
+  "Andrea Wilkerson": {
+   "Supervisor": "Charlotte Suzuki",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Andrew Aguilar": {
+   "Supervisor": "Nathan Patel",
+   "Manager": "Emily Chen"
+  },
+  "Andrew Barrett": {
+   "Supervisor": "Elijah Yamaguchi",
+   "Manager": "John Smith"
+  },
+  "Andrew Davis": {
+   "Supervisor": "Aiden Patel",
+   "Manager": "John Smith"
+  },
+  "Angela Booker MD": {
+   "Supervisor": "Carter Park",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Angela Brown": {
+   "Supervisor": "Zoe Yamamoto",
+   "Manager": "Emily Chen"
+  },
+  "Angela Carlson": {
+   "Supervisor": "Wyatt Kim",
+   "Manager": "Michael Lee"
+  },
+  "Angela Harris": {
+   "Supervisor": "Olivia Suzuki",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Angela Reid": {
+   "Supervisor": "Carter Park",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Angelica Williams": {
+   "Supervisor": "Ava Wong",
+   "Manager": "William Kim"
+  },
+  "Angie Jackson": {
+   "Supervisor": "Ava Wong",
+   "Manager": "William Kim"
+  },
+  "Anita Harris": {
+   "Supervisor": "Ethan Nakamura",
+   "Manager": "Emily Chen"
+  },
+  "Anita Roberts": {
+   "Supervisor": "Mia Patel",
+   "Manager": "Emily Chen"
+  },
+  "Ann English": {
+   "Supervisor": "Olivia Suzuki",
+   "Manager": "Olivia Tan"
+  },
+  "Anna Brown": {
+   "Supervisor": "Abigail Suzuki",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Anna Lawrence": {
+   "Supervisor": "Mason Gupta",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Anna Miller": {
+   "Supervisor": "Landon Tanaka",
+   "Manager": "Emily Chen"
+  },
+  "Anna Thompson": {
+   "Supervisor": "Ethan Nakamura",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Anthony Booth": {
+   "Supervisor": "William Park",
+   "Manager": "John Smith"
+  },
+  "Anthony Bowen": {
+   "Supervisor": "Olivia Suzuki",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Anthony Clark": {
+   "Supervisor": "Austin Johnson",
+   "Manager": "Michael Lee"
+  },
+  "Anthony Cook": {
+   "Supervisor": "Noah Patel",
+   "Manager": "Michael Lee"
+  },
+  "Anthony Diaz": {
+   "Supervisor": "Elijah Yamaguchi",
+   "Manager": "Emily Chen"
+  },
+  "Anthony Hancock": {
+   "Supervisor": "William Park",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Anthony Hayes": {
+   "Supervisor": "Madison Kim",
+   "Manager": "Emily Chen"
+  },
+  "Anthony Jackson": {
+   "Supervisor": "Mia Patel",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Anthony Kerr": {
+   "Supervisor": "Emma Park",
+   "Manager": "John Smith"
+  },
+  "Anthony Moss": {
+   "Supervisor": "Noah Patel",
+   "Manager": "Michael Lee"
+  },
+  "Anthony Reeves": {
+   "Supervisor": "Nathan Patel",
+   "Manager": "Michael Lee"
+  },
+  "Anthony Rocha": {
+   "Supervisor": "Emily Yamashita",
+   "Manager": "Michael Lee"
+  },
+  "Anthony Salinas": {
+   "Supervisor": "William Park",
+   "Manager": "John Smith"
+  },
+  "Anthony Shaffer": {
+   "Supervisor": "Carter Park",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Anthony Sims": {
+   "Supervisor": "Zoe Yamamoto",
+   "Manager": "John Smith"
+  },
+  "Anthony Smith": {
+   "Supervisor": "Mia Patel",
+   "Manager": "John Smith"
+  },
+  "Anthony Taylor": {
+   "Supervisor": "Emma Park",
+   "Manager": "John Smith"
+  },
+  "Antonio Wilson": {
+   "Supervisor": "Mia Patel",
+   "Manager": "Emily Chen"
+  },
+  "April Hall": {
+   "Supervisor": "Amelia Tanaka",
+   "Manager": "Emily Chen"
+  },
+  "Ariana Chavez": {
+   "Supervisor": "Mason Gupta",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Ariana Young": {
+   "Supervisor": "Abigail Suzuki",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Ashlee Johnson": {
+   "Supervisor": "Zoe Yamamoto",
+   "Manager": "Emily Chen"
+  },
+  "Ashley Dunlap": {
+   "Supervisor": "Aiden Patel",
+   "Manager": "Olivia Tan"
+  },
+  "Ashley Edwards": {
+   "Supervisor": "Ethan Tan",
+   "Manager": "Michael Lee"
+  },
+  "Ashley Espinoza": {
+   "Supervisor": "Aiden Patel",
+   "Manager": "John Smith"
+  },
+  "Ashley Ferguson": {
+   "Supervisor": "Austin Johnson",
+   "Manager": "William Kim"
+  },
+  "Ashley Hamilton": {
+   "Supervisor": "Jackson Park",
+   "Manager": "William Kim"
+  },
+  "Ashley Lawson": {
+   "Supervisor": "Landon Tanaka",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Ashley Robinson": {
+   "Supervisor": "Emma Park",
+   "Manager": "John Smith"
+  },
+  "Ashley Rush": {
+   "Supervisor": "Nathan Patel",
+   "Manager": "Michael Lee"
+  },
+  "Ashley Ward": {
+   "Supervisor": "Carter Park",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Ashley Yu": {
+   "Supervisor": "William Park",
+   "Manager": "John Smith"
+  },
+  "Austin Gregory": {
+   "Supervisor": "Olivia Suzuki",
+   "Manager": "John Smith"
+  },
+  "Austin Robinson": {
+   "Supervisor": "Logan Lee",
+   "Manager": "Emily Chen"
+  },
+  "Belinda Fuentes": {
+   "Supervisor": "Wyatt Kim",
+   "Manager": "Michael Lee"
+  },
+  "Belinda Landry": {
+   "Supervisor": "Zoe Yamamoto",
+   "Manager": "William Kim"
+  },
+  "Benjamin Gomez": {
+   "Supervisor": "Elijah Yamaguchi",
+   "Manager": "John Smith"
+  },
+  "Benjamin Lewis": {
+   "Supervisor": "Nathan Patel",
+   "Manager": "John Smith"
+  },
+  "Benjamin Taylor": {
+   "Supervisor": "Mia Patel",
+   "Manager": "Emily Chen"
+  },
+  "Bethany Lee": {
+   "Supervisor": "Olivia Suzuki",
+   "Manager": "John Smith"
+  },
+  "Betty Harris": {
+   "Supervisor": "Lily Chen",
+   "Manager": "Michael Lee"
+  },
+  "Betty Schmidt": {
+   "Supervisor": "Evelyn Kimura",
+   "Manager": "John Smith"
+  },
+  "Blake Davis": {
+   "Supervisor": "Amelia Tanaka",
+   "Manager": "Michael Lee"
+  },
+  "Bob Keith": {
+   "Supervisor": "Mia Patel",
+   "Manager": "Olivia Tan"
+  },
+  "Bobby Higgins": {
+   "Supervisor": "Scarlett Chen",
+   "Manager": "John Smith"
+  },
+  "Bobby Rodriguez": {
+   "Supervisor": "Ethan Tan",
+   "Manager": "John Smith"
+  },
+  "Bonnie Durham": {
+   "Supervisor": "Austin Johnson",
+   "Manager": "Michael Lee"
+  },
+  "Bonnie Jimenez": {
+   "Supervisor": "Logan Lee",
+   "Manager": "Emily Chen"
+  },
+  "Bradley Johnson": {
+   "Supervisor": "Austin Johnson",
+   "Manager": "William Kim"
+  },
+  "Bradley Lyons": {
+   "Supervisor": "Alexander Tanaka",
+   "Manager": "Michael Lee"
+  },
+  "Bradley Nelson": {
+   "Supervisor": "Brayden Wong",
+   "Manager": "John Smith"
+  },
+  "Brandon Escobar": {
+   "Supervisor": "Jacob Sato",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Brandon Frost": {
+   "Supervisor": "Carter Park",
+   "Manager": "Michael Lee"
+  },
+  "Brandon Goodwin": {
+   "Supervisor": "Ethan Tan",
+   "Manager": "Michael Lee"
+  },
+  "Brandon Leon": {
+   "Supervisor": "Ethan Tan",
+   "Manager": "William Kim"
+  },
+  "Brandon Martin": {
+   "Supervisor": "Nathan Patel",
+   "Manager": "John Smith"
+  },
+  "Brandon Young": {
+   "Supervisor": "Zoe Yamamoto",
+   "Manager": "John Smith"
+  },
+  "Brandy Baker": {
+   "Supervisor": "Elijah Yamaguchi",
+   "Manager": "Emily Chen"
+  },
+  "Brandy Foley": {
+   "Supervisor": "Ethan Nakamura",
+   "Manager": "Emily Chen"
+  },
+  "Brandy Johnson": {
+   "Supervisor": "Noah Patel",
+   "Manager": "Michael Lee"
+  },
+  "Brandy Odonnell": {
+   "Supervisor": "Zoe Yamamoto",
+   "Manager": "William Kim"
+  },
+  "Brandy Shea": {
+   "Supervisor": "Carter Park",
+   "Manager": "Michael Lee"
+  },
+  "Brenda Cox": {
+   "Supervisor": "Elijah Yamaguchi",
+   "Manager": "John Smith"
+  },
+  "Brenda Gillespie": {
+   "Supervisor": "Dylan Kim",
+   "Manager": "William Kim"
+  },
+  "Brenda Suarez": {
+   "Supervisor": "Ethan Nakamura",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Brendan Thomas": {
+   "Supervisor": "Logan Lee",
+   "Manager": "William Kim"
+  },
+  "Brent Palmer": {
+   "Supervisor": "Jacob Sato",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Brett Smith": {
+   "Supervisor": "Dylan Kim",
+   "Manager": "Michael Lee"
+  },
+  "Brian Barrera": {
+   "Supervisor": "Carter Park",
+   "Manager": "Michael Lee"
+  },
+  "Brian Hines": {
+   "Supervisor": "Abigail Suzuki",
+   "Manager": "William Kim"
+  },
+  "Brian Koch": {
+   "Supervisor": "Ethan Tan",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Brian Mcguire": {
+   "Supervisor": "Elijah Yamaguchi",
+   "Manager": "Emily Chen"
+  },
+  "Brian Pugh": {
+   "Supervisor": "Emily Yamashita",
+   "Manager": "William Kim"
+  },
+  "Brian Wall": {
+   "Supervisor": "Jacob Sato",
+   "Manager": "William Kim"
+  },
+  "Brian Williams": {
+   "Supervisor": "Olivia Suzuki",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Brian Wilson PhD": {
+   "Supervisor": "Emma Park",
+   "Manager": "John Smith"
+  },
+  "Brian Young": {
+   "Supervisor": "Elijah Yamaguchi",
+   "Manager": "Emily Chen"
+  },
+  "Briana Patton": {
+   "Supervisor": "Aiden Patel",
+   "Manager": "John Smith"
+  },
+  "Brianna Brown PhD": {
+   "Supervisor": "Amelia Tanaka",
+   "Manager": "Michael Lee"
+  },
+  "Brianna Orr": {
+   "Supervisor": "Lucas Singh",
+   "Manager": "John Smith"
+  },
+  "Brianna Wolf": {
+   "Supervisor": "Mia Patel",
+   "Manager": "John Smith"
+  },
+  "Brittany Nunez": {
+   "Supervisor": "Emily Yamashita",
+   "Manager": "John Smith"
+  },
+  "Brittany Thornton": {
+   "Supervisor": "Ethan Nakamura",
+   "Manager": "Emily Chen"
+  },
+  "Brittany Tran": {
+   "Supervisor": "Landon Tanaka",
+   "Manager": "Emily Chen"
+  },
+  "Brittney Key": {
+   "Supervisor": "Mia Yamamoto",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Bruce Banks": {
+   "Supervisor": "Zoe Yamamoto",
+   "Manager": "William Kim"
+  },
+  "Bruce Martin": {
+   "Supervisor": "Zoe Yamamoto",
+   "Manager": "Emily Chen"
+  },
+  "Bruce Smith": {
+   "Supervisor": "Elijah Yamaguchi",
+   "Manager": "Michael Lee"
+  },
+  "Caitlin Johnson": {
+   "Supervisor": "Evelyn Kimura",
+   "Manager": "John Smith"
+  },
+  "Caleb Allen": {
+   "Supervisor": "Ava Wong",
+   "Manager": "William Kim"
+  },
+  "Carl Douglas": {
+   "Supervisor": "Emily Yamashita",
+   "Manager": "Michael Lee"
+  },
+  "Carla Anderson": {
+   "Supervisor": "Carter Park",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Carla Burke": {
+   "Supervisor": "Amelia Tanaka",
+   "Manager": "Michael Lee"
+  },
+  "Carla Morgan": {
+   "Supervisor": "Nathan Patel",
+   "Manager": "Emily Chen"
+  },
+  "Carlos Curtis": {
+   "Supervisor": "Landon Tanaka",
+   "Manager": "Emily Chen"
+  },
+  "Carmen Lyons": {
+   "Supervisor": "Ava Wong",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Carmen Snow": {
+   "Supervisor": "Dylan Kim",
+   "Manager": "Olivia Tan"
+  },
+  "Carmen Young": {
+   "Supervisor": "Ava Wong",
+   "Manager": "William Kim"
+  },
+  "Carol Hansen": {
+   "Supervisor": "Brayden Wong",
+   "Manager": "Michael Lee"
+  },
+  "Carol Reid": {
+   "Supervisor": "Evelyn Kimura",
+   "Manager": "John Smith"
+  },
+  "Carol Washington": {
+   "Supervisor": "Lucas Singh",
+   "Manager": "John Smith"
+  },
+  "Carolyn Goodman DVM": {
+   "Supervisor": "Carter Park",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Carolyn Lewis": {
+   "Supervisor": "William Park",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Carolyn Norman": {
+   "Supervisor": "Abigail Suzuki",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Carolyn Reese": {
+   "Supervisor": "Madison Kim",
+   "Manager": "Michael Lee"
+  },
+  "Carolyn Roberts": {
+   "Supervisor": "Isabella Wong",
+   "Manager": "Emily Chen"
+  },
+  "Carolyn Sullivan": {
+   "Supervisor": "Brayden Wong",
+   "Manager": "Michael Lee"
+  },
+  "Casey Baldwin": {
+   "Supervisor": "Ethan Nakamura",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Casey Holmes": {
+   "Supervisor": "William Park",
+   "Manager": "John Smith"
+  },
+  "Casey Page": {
+   "Supervisor": "Emily Yamashita",
+   "Manager": "Michael Lee"
+  },
+  "Catherine Baird": {
+   "Supervisor": "Lily Chen",
+   "Manager": "Michael Lee"
+  },
+  "Catherine Cain": {
+   "Supervisor": "Dylan Kim",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Catherine Gibson": {
+   "Supervisor": "Evelyn Kimura",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Catherine Watkins": {
+   "Supervisor": "Jackson Park",
+   "Manager": "Michael Lee"
+  },
+  "Cathy Harris": {
+   "Supervisor": "Charlotte Suzuki",
+   "Manager": "William Kim"
+  },
+  "Chad Burns": {
+   "Supervisor": "Ava Wong",
+   "Manager": "William Kim"
+  },
+  "Chad Daniel": {
+   "Supervisor": "Scarlett Chen",
+   "Manager": "John Smith"
+  },
+  "Chad Nielsen": {
+   "Supervisor": "Emma Park",
+   "Manager": "John Smith"
+  },
+  "Chad Wells": {
+   "Supervisor": "Evelyn Kimura",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Charles Huff": {
+   "Supervisor": "Landon Tanaka",
+   "Manager": "Emily Chen"
+  },
+  "Charles Moore": {
+   "Supervisor": "Nathan Patel",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Charles Morales": {
+   "Supervisor": "Zoe Yamamoto",
+   "Manager": "John Smith"
+  },
+  "Charles Nelson": {
+   "Supervisor": "Austin Johnson",
+   "Manager": "William Kim"
+  },
+  "Charles Williamson": {
+   "Supervisor": "Logan Lee",
+   "Manager": "Emily Chen"
+  },
+  "Charlotte Jacobs": {
+   "Supervisor": "Madison Kim",
+   "Manager": "Michael Lee"
+  },
+  "Charlotte Thomas": {
+   "Supervisor": "Mia Patel",
+   "Manager": "Emily Chen"
+  },
+  "Chelsea Crawford": {
+   "Supervisor": "Carter Park",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Chelsea Johnson": {
+   "Supervisor": "Mia Patel",
+   "Manager": "Emily Chen"
+  },
+  "Chelsey Hodges": {
+   "Supervisor": "Nathan Patel",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Cheryl Rice": {
+   "Supervisor": "Lucas Singh",
+   "Manager": "John Smith"
+  },
+  "Chloe Roberts": {
+   "Supervisor": "Jacob Sato",
+   "Manager": "Emily Chen"
+  },
+  "Chris Davenport": {
+   "Supervisor": "Brayden Wong",
+   "Manager": "John Smith"
+  },
+  "Chris White": {
+   "Supervisor": "Lily Chen",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Christian Armstrong": {
+   "Supervisor": "Wyatt Kim",
+   "Manager": "Michael Lee"
+  },
+  "Christina Bolton": {
+   "Supervisor": "Ava Wong",
+   "Manager": "William Kim"
+  },
+  "Christina Chavez": {
+   "Supervisor": "Carter Park",
+   "Manager": "Michael Lee"
+  },
+  "Christina Hines MD": {
+   "Supervisor": "Zoe Yamamoto",
+   "Manager": "William Kim"
+  },
+  "Christina Lewis": {
+   "Supervisor": "Aiden Patel",
+   "Manager": "John Smith"
+  },
+  "Christina Lopez": {
+   "Supervisor": "Isabella Wong",
+   "Manager": "Emily Chen"
+  },
+  "Christine Castro": {
+   "Supervisor": "Zoe Yamamoto",
+   "Manager": "John Smith"
+  },
+  "Christine Fuller": {
+   "Supervisor": "Logan Lee",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Christine Gray": {
+   "Supervisor": "Logan Lee",
+   "Manager": "Emily Chen"
+  },
+  "Christine Jackson": {
+   "Supervisor": "Abigail Suzuki",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Christine Lewis": {
+   "Supervisor": "Emma Park",
+   "Manager": "John Smith"
+  },
+  "Christine Myers": {
+   "Supervisor": "Olivia Wang",
+   "Manager": "Emily Chen"
+  },
+  "Christopher Anderson": {
+   "Supervisor": "Mason Gupta",
+   "Manager": "Olivia Tan"
+  },
+  "Christopher Brown": {
+   "Supervisor": "Aiden Patel",
+   "Manager": "Olivia Tan"
+  },
+  "Christopher Chan": {
+   "Supervisor": "Ava Wong",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Christopher Dean": {
+   "Supervisor": "Aiden Patel",
+   "Manager": "Olivia Tan"
+  },
+  "Christopher Harris": {
+   "Supervisor": "Wyatt Kim",
+   "Manager": "William Kim"
+  },
+  "Christopher Jones": {
+   "Supervisor": "Evelyn Kimura",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Christopher Lang": {
+   "Supervisor": "Jackson Park",
+   "Manager": "William Kim"
+  },
+  "Christopher Mcintosh": {
+   "Supervisor": "Oliver Nguyen",
+   "Manager": "John Smith"
+  },
+  "Christopher Meyers": {
+   "Supervisor": "Mia Patel",
+   "Manager": "William Kim"
+  },
+  "Christopher Moore Jr.": {
+   "Supervisor": "Carter Park",
+   "Manager": "Michael Lee"
+  },
+  "Christopher Murphy": {
+   "Supervisor": "Scarlett Chen",
+   "Manager": "John Smith"
+  },
+  "Christopher Obrien": {
+   "Supervisor": "Noah Patel",
+   "Manager": "Michael Lee"
+  },
+  "Christopher Rice": {
+   "Supervisor": "Carter Park",
+   "Manager": "Michael Lee"
+  },
+  "Christopher Roberson": {
+   "Supervisor": "Jacob Sato",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Christopher Sanchez": {
+   "Supervisor": "Austin Johnson",
+   "Manager": "Michael Lee"
+  },
+  "Christopher Schneider": {
+   "Supervisor": "Nathan Patel",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Christopher Schultz": {
+   "Supervisor": "William Park",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Christopher Smith": {
+   "Supervisor": "Ava Wong",
+   "Manager": "William Kim"
+  },
+  "Cindy Kerr": {
+   "Supervisor": "Alexander Tanaka",
+   "Manager": "Michael Lee"
+  },
+  "Cindy Stewart": {
+   "Supervisor": "Logan Lee",
+   "Manager": "Emily Chen"
+  },
+  "Claudia Jones": {
+   "Supervisor": "Evelyn Kimura",
+   "Manager": "John Smith"
+  },
+  "Claudia Massey": {
+   "Supervisor": "Jacob Sato",
+   "Manager": "Emily Chen"
+  },
+  "Cody Nielsen": {
+   "Supervisor": "Emily Yamashita",
+   "Manager": "Michael Lee"
+  },
+  "Cody Perez": {
+   "Supervisor": "Harper Wong",
+   "Manager": "William Kim"
+  },
+  "Cody Peters": {
+   "Supervisor": "Abigail Suzuki",
+   "Manager": "William Kim"
+  },
+  "Cole Carlson": {
+   "Supervisor": "Ava Wong",
+   "Manager": "William Kim"
+  },
+  "Cole Moore": {
+   "Supervisor": "Emma Park",
+   "Manager": "John Smith"
+  },
+  "Colleen Hall": {
+   "Supervisor": "Landon Tanaka",
+   "Manager": "John Smith"
+  },
+  "Colleen Morton": {
+   "Supervisor": "Zoe Yamamoto",
+   "Manager": "John Smith"
+  },
+  "Colleen Savage": {
+   "Supervisor": "Ava Wong",
+   "Manager": "William Kim"
+  },
+  "Connor Jackson": {
+   "Supervisor": "Ethan Tan",
+   "Manager": "Michael Lee"
+  },
+  "Corey Brown": {
+   "Supervisor": "Nathan Patel",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Corey Gibson": {
+   "Supervisor": "Alexander Tanaka",
+   "Manager": "Michael Lee"
+  },
+  "Corey Hernandez": {
+   "Supervisor": "Abigail Suzuki",
+   "Manager": "William Kim"
+  },
+  "Cory Collins": {
+   "Supervisor": "Mia Yamamoto",
+   "Manager": "Emily Chen"
+  },
+  "Courtney Richardson": {
+   "Supervisor": "Logan Lee",
+   "Manager": "Emily Chen"
+  },
+  "Courtney Wolf": {
+   "Supervisor": "Lily Chen",
+   "Manager": "Michael Lee"
+  },
+  "Craig Fuller": {
+   "Supervisor": "Charlotte Suzuki",
+   "Manager": "William Kim"
+  },
+  "Craig Gonzales": {
+   "Supervisor": "Dylan Kim",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Craig Hall": {
+   "Supervisor": "Harper Wong",
+   "Manager": "Emily Chen"
+  },
+  "Craig Henderson": {
+   "Supervisor": "Brayden Wong",
+   "Manager": "John Smith"
+  },
+  "Craig Ruiz": {
+   "Supervisor": "Carter Park",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Cristina Harris": {
+   "Supervisor": "Jacob Sato",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Crystal Davis": {
+   "Supervisor": "Wyatt Kim",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Crystal Dunlap": {
+   "Supervisor": "Abigail Suzuki",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Crystal Walsh": {
+   "Supervisor": "Olivia Suzuki",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Curtis Diaz": {
+   "Supervisor": "Nathan Patel",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Curtis Hill": {
+   "Supervisor": "Emma Park",
+   "Manager": "John Smith"
+  },
+  "Curtis Mccarthy": {
+   "Supervisor": "Zoe Yamamoto",
+   "Manager": "John Smith"
+  },
+  "Cynthia Mills": {
+   "Supervisor": "William Park",
+   "Manager": "John Smith"
+  },
+  "Cynthia Sheppard": {
+   "Supervisor": "Olivia Wang",
+   "Manager": "Emily Chen"
+  },
+  "Dakota Collins": {
+   "Supervisor": "Logan Lee",
+   "Manager": "Emily Chen"
+  },
+  "Dalton Oneal": {
+   "Supervisor": "Noah Patel",
+   "Manager": "Michael Lee"
+  },
+  "Dana Bridges": {
+   "Supervisor": "Mason Gupta",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Dana Smith": {
+   "Supervisor": "Mason Gupta",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Dana Taylor": {
+   "Supervisor": "Aiden Patel",
+   "Manager": "John Smith"
+  },
+  "Daniel Ball": {
+   "Supervisor": "Ethan Nakamura",
+   "Manager": "Olivia Tan"
+  },
+  "Daniel Dalton": {
+   "Supervisor": "Elijah Yamaguchi",
+   "Manager": "Emily Chen"
+  },
+  "Daniel Davis": {
+   "Supervisor": "Madison Kim",
+   "Manager": "John Smith"
+  },
+  "Daniel Duncan": {
+   "Supervisor": "Emily Yamashita",
+   "Manager": "Michael Lee"
+  },
+  "Daniel Henderson": {
+   "Supervisor": "Noah Patel",
+   "Manager": "Michael Lee"
+  },
+  "Daniel Jones": {
+   "Supervisor": "Olivia Suzuki",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Daniel Martin": {
+   "Supervisor": "Olivia Suzuki",
+   "Manager": "Olivia Tan"
+  },
+  "Daniel Martinez": {
+   "Supervisor": "Ethan Tan",
+   "Manager": "Michael Lee"
+  },
+  "Daniel May": {
+   "Supervisor": "William Park",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Daniel Murphy": {
+   "Supervisor": "Noah Patel",
+   "Manager": "Michael Lee"
+  },
+  "Daniel Silva": {
+   "Supervisor": "Ava Wong",
+   "Manager": "William Kim"
+  },
+  "Daniel Simon": {
+   "Supervisor": "Olivia Suzuki",
+   "Manager": "John Smith"
+  },
+  "Daniel Woods": {
+   "Supervisor": "Logan Lee",
+   "Manager": "Emily Chen"
+  },
+  "Danielle Morris": {
+   "Supervisor": "Emma Park",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Danielle Williams": {
+   "Supervisor": "Sophia Sato",
+   "Manager": "John Smith"
+  },
+  "Danny Li": {
+   "Supervisor": "Nathan Patel",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Darren Hoffman": {
+   "Supervisor": "Elijah Yamaguchi",
+   "Manager": "John Smith"
+  },
+  "Darren Watson": {
+   "Supervisor": "Logan Lee",
+   "Manager": "Emily Chen"
+  },
+  "Daryl Martin": {
+   "Supervisor": "Aiden Patel",
+   "Manager": "John Smith"
+  },
+  "David Butler": {
+   "Supervisor": "Olivia Wang",
+   "Manager": "Emily Chen"
+  },
+  "David Byrd": {
+   "Supervisor": "Emma Park",
+   "Manager": "Jennifer Nguyen"
+  },
+  "David Clarke DDS": {
+   "Supervisor": "Landon Tanaka",
+   "Manager": "John Smith"
+  },
+  "David Copeland": {
+   "Supervisor": "Ava Wong",
+   "Manager": "Jennifer Nguyen"
+  },
+  "David Garcia": {
+   "Supervisor": "Sophia Sato",
+   "Manager": "John Smith"
+  },
+  "David Guerra": {
+   "Supervisor": "Ava Wong",
+   "Manager": "Olivia Tan"
+  },
+  "David Harrell": {
+   "Supervisor": "Carter Park",
+   "Manager": "Jennifer Nguyen"
+  },
+  "David Martin": {
+   "Supervisor": "Emily Yamashita",
+   "Manager": "Michael Lee"
+  },
+  "David Mayer": {
+   "Supervisor": "Emma Park",
+   "Manager": "Jennifer Nguyen"
+  },
+  "David Meyers": {
+   "Supervisor": "Isabella Wong",
+   "Manager": "Emily Chen"
+  },
+  "David Meza MD": {
+   "Supervisor": "Olivia Suzuki",
+   "Manager": "John Smith"
+  },
+  "David Michael": {
+   "Supervisor": "Lily Chen",
+   "Manager": "Michael Lee"
+  },
+  "David Parker": {
+   "Supervisor": "Harper Wong",
+   "Manager": "Emily Chen"
+  },
+  "David Perez": {
+   "Supervisor": "Lily Chen",
+   "Manager": "Michael Lee"
+  },
+  "David Reed": {
+   "Supervisor": "Madison Kim",
+   "Manager": "John Smith"
+  },
+  "David Rojas": {
+   "Supervisor": "Olivia Suzuki",
+   "Manager": "Jennifer Nguyen"
+  },
+  "David Smith": {
+   "Supervisor": "Nathan Patel",
+   "Manager": "John Smith"
+  },
+  "David Steele": {
+   "Supervisor": "Mason Gupta",
+   "Manager": "Jennifer Nguyen"
+  },
+  "David Taylor": {
+   "Supervisor": "Carter Park",
+   "Manager": "Michael Lee"
+  },
+  "David Todd": {
+   "Supervisor": "Noah Patel",
+   "Manager": "Michael Lee"
+  },
+  "David Warren": {
+   "Supervisor": "Elijah Yamaguchi",
+   "Manager": "Emily Chen"
+  },
+  "David Weaver": {
+   "Supervisor": "Lily Chen",
+   "Manager": "Michael Lee"
+  },
+  "David Williamson": {
+   "Supervisor": "Carter Park",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Dawn Boyd": {
+   "Supervisor": "Olivia Suzuki",
+   "Manager": "John Smith"
+  },
+  "Dawn Brown": {
+   "Supervisor": "Amelia Tanaka",
+   "Manager": "Michael Lee"
+  },
+  "Dawn Copeland": {
+   "Supervisor": "Jacob Sato",
+   "Manager": "Emily Chen"
+  },
+  "Dawn Holloway": {
+   "Supervisor": "Jacob Sato",
+   "Manager": "Emily Chen"
+  },
+  "Dawn Porter": {
+   "Supervisor": "Jacob Sato",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Dawn Whitaker": {
+   "Supervisor": "Austin Johnson",
+   "Manager": "Michael Lee"
+  },
+  "Deanna Wright": {
+   "Supervisor": "Jackson Park",
+   "Manager": "William Kim"
+  },
+  "Debbie Gomez": {
+   "Supervisor": "Evelyn Kimura",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Debbie Johnson": {
+   "Supervisor": "Emily Yamashita",
+   "Manager": "Michael Lee"
+  },
+  "Deborah Brown": {
+   "Supervisor": "Ava Wong",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Deborah Smith": {
+   "Supervisor": "Elijah Yamaguchi",
+   "Manager": "Emily Chen"
+  },
+  "Debra Brown": {
+   "Supervisor": "Zoe Yamamoto",
+   "Manager": "John Smith"
+  },
+  "Debra Hanson": {
+   "Supervisor": "Alexander Tanaka",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Denise Rodriguez": {
+   "Supervisor": "Scarlett Chen",
+   "Manager": "John Smith"
+  },
+  "Dennis Campbell": {
+   "Supervisor": "Harper Wong",
+   "Manager": "William Kim"
+  },
+  "Dennis Miller": {
+   "Supervisor": "Layla Taniguchi",
+   "Manager": "Emily Chen"
+  },
+  "Desiree Newton": {
+   "Supervisor": "Emma Park",
+   "Manager": "John Smith"
+  },
+  "Desiree Torres": {
+   "Supervisor": "Noah Patel",
+   "Manager": "Michael Lee"
+  },
+  "Devon Daniel": {
+   "Supervisor": "Olivia Wang",
+   "Manager": "Olivia Tan"
+  },
+  "Diana Dudley": {
+   "Supervisor": "Logan Lee",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Diana Sanchez": {
+   "Supervisor": "William Park",
+   "Manager": "John Smith"
+  },
+  "Diana Solomon": {
+   "Supervisor": "Wyatt Kim",
+   "Manager": "William Kim"
+  },
+  "Diana Terry": {
+   "Supervisor": "Emily Yamashita",
+   "Manager": "John Smith"
+  },
+  "Diana Thomas": {
+   "Supervisor": "Landon Tanaka",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Diana White": {
+   "Supervisor": "Layla Taniguchi",
+   "Manager": "Emily Chen"
+  },
+  "Dillon Miller": {
+   "Supervisor": "Mason Gupta",
+   "Manager": "Olivia Tan"
+  },
+  "Dominique Roberts": {
+   "Supervisor": "Ava Wong",
+   "Manager": "Olivia Tan"
+  },
+  "Donald Hunt": {
+   "Supervisor": "Lucas Singh",
+   "Manager": "John Smith"
+  },
+  "Donald Jordan": {
+   "Supervisor": "Mia Patel",
+   "Manager": "Emily Chen"
+  },
+  "Donna Gilmore": {
+   "Supervisor": "Scarlett Chen",
+   "Manager": "John Smith"
+  },
+  "Donna Jenkins": {
+   "Supervisor": "Jackson Park",
+   "Manager": "William Kim"
+  },
+  "Donna Lee": {
+   "Supervisor": "Sophia Sato",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Donna Miller": {
+   "Supervisor": "Logan Lee",
+   "Manager": "Emily Chen"
+  },
+  "Douglas Pitts": {
+   "Supervisor": "Abigail Suzuki",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Douglas Savage": {
+   "Supervisor": "Jackson Park",
+   "Manager": "John Smith"
+  },
+  "Douglas Smith": {
+   "Supervisor": "Brayden Wong",
+   "Manager": "John Smith"
+  },
+  "Douglas Tucker": {
+   "Supervisor": "Madison Kim",
+   "Manager": "Emily Chen"
+  },
+  "Dr. Andrew Bowers": {
+   "Supervisor": "Wyatt Kim",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Dr. Heather Lewis": {
+   "Supervisor": "Elijah Yamaguchi",
+   "Manager": "Emily Chen"
+  },
+  "Duane Norman": {
+   "Supervisor": "Jackson Park",
+   "Manager": "William Kim"
+  },
+  "Dustin Deleon": {
+   "Supervisor": "Evelyn Kimura",
+   "Manager": "John Smith"
+  },
+  "Dylan Day": {
+   "Supervisor": "Brayden Wong",
+   "Manager": "John Smith"
+  },
+  "Dylan Mercer": {
+   "Supervisor": "Zoe Yamamoto",
+   "Manager": "William Kim"
+  },
+  "Dylan Stevens": {
+   "Supervisor": "Emma Park",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Edward Dalton": {
+   "Supervisor": "Wyatt Kim",
+   "Manager": "Michael Lee"
+  },
+  "Edward Hawkins": {
+   "Supervisor": "Nathan Patel",
+   "Manager": "Emily Chen"
+  },
+  "Edward Moreno": {
+   "Supervisor": "Mia Patel",
+   "Manager": "John Smith"
+  },
+  "Edward Perez": {
+   "Supervisor": "Olivia Wang",
+   "Manager": "Olivia Tan"
+  },
+  "Edward Taylor": {
+   "Supervisor": "Olivia Wang",
+   "Manager": "Emily Chen"
+  },
+  "Edwin Wilson": {
+   "Supervisor": "Ethan Tan",
+   "Manager": "Michael Lee"
+  },
+  "Elijah Henderson": {
+   "Supervisor": "Elijah Yamaguchi",
+   "Manager": "John Smith"
+  },
+  "Elijah Hoffman": {
+   "Supervisor": "Carter Park",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Elizabeth Brown": {
+   "Supervisor": "Brayden Wong",
+   "Manager": "Michael Lee"
+  },
+  "Elizabeth Collins": {
+   "Supervisor": "Madison Kim",
+   "Manager": "Michael Lee"
+  },
+  "Elizabeth Garcia": {
+   "Supervisor": "Madison Kim",
+   "Manager": "John Smith"
+  },
+  "Elizabeth Guerra": {
+   "Supervisor": "Nathan Patel",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Elizabeth Lara": {
+   "Supervisor": "Dylan Kim",
+   "Manager": "Michael Lee"
+  },
+  "Elizabeth Lopez": {
+   "Supervisor": "Mia Patel",
+   "Manager": "Emily Chen"
+  },
+  "Elizabeth Macias": {
+   "Supervisor": "Lily Chen",
+   "Manager": "Michael Lee"
+  },
+  "Elizabeth Mills": {
+   "Supervisor": "Lucas Singh",
+   "Manager": "John Smith"
+  },
+  "Elizabeth Reid": {
+   "Supervisor": "Charlotte Suzuki",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Elizabeth Rivera": {
+   "Supervisor": "Aiden Patel",
+   "Manager": "John Smith"
+  },
+  "Elizabeth Rose": {
+   "Supervisor": "Emma Park",
+   "Manager": "John Smith"
+  },
+  "Elizabeth Williams": {
+   "Supervisor": "Madison Kim",
+   "Manager": "John Smith"
+  },
+  "Emily Hernandez": {
+   "Supervisor": "Zoe Yamamoto",
+   "Manager": "Emily Chen"
+  },
+  "Emily Mckenzie": {
+   "Supervisor": "Amelia Tanaka",
+   "Manager": "Emily Chen"
+  },
+  "Emily Sharp": {
+   "Supervisor": "Austin Johnson",
+   "Manager": "Michael Lee"
+  },
+  "Emma Wyatt": {
+   "Supervisor": "Aiden Patel",
+   "Manager": "Olivia Tan"
+  },
+  "Eric Bowen": {
+   "Supervisor": "Amelia Tanaka",
+   "Manager": "Michael Lee"
+  },
+  "Eric Dunn MD": {
+   "Supervisor": "Jackson Park",
+   "Manager": "William Kim"
+  },
+  "Eric Miller MD": {
+   "Supervisor": "Landon Tanaka",
+   "Manager": "Emily Chen"
+  },
+  "Eric Nixon MD": {
+   "Supervisor": "Olivia Suzuki",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Eric Smith": {
+   "Supervisor": "Mason Gupta",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Eric Williams": {
+   "Supervisor": "Ethan Nakamura",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Erica Harris": {
+   "Supervisor": "Carter Park",
+   "Manager": "Michael Lee"
+  },
+  "Erik Williams": {
+   "Supervisor": "Mia Patel",
+   "Manager": "Olivia Tan"
+  },
+  "Erika Black": {
+   "Supervisor": "Scarlett Chen",
+   "Manager": "John Smith"
+  },
+  "Erika Nelson": {
+   "Supervisor": "Jackson Park",
+   "Manager": "William Kim"
+  },
+  "Erin Fischer": {
+   "Supervisor": "Abigail Suzuki",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Erin Kemp": {
+   "Supervisor": "Ava Wong",
+   "Manager": "William Kim"
+  },
+  "Erin Le": {
+   "Supervisor": "Logan Lee",
+   "Manager": "Emily Chen"
+  },
+  "Erin Meadows": {
+   "Supervisor": "Mia Patel",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Erin Smith MD": {
+   "Supervisor": "Evelyn Kimura",
+   "Manager": "John Smith"
+  },
+  "Ernest Harrington": {
+   "Supervisor": "Zoe Yamamoto",
+   "Manager": "Emily Chen"
+  },
+  "Evan Ramsey": {
+   "Supervisor": "Ethan Tan",
+   "Manager": "John Smith"
+  },
+  "Evelyn Petersen": {
+   "Supervisor": "Olivia Wang",
+   "Manager": "Olivia Tan"
+  },
+  "Evelyn Stevens": {
+   "Supervisor": "Aiden Patel",
+   "Manager": "Olivia Tan"
+  },
+  "Frank Garza": {
+   "Supervisor": "Mia Patel",
+   "Manager": "William Kim"
+  },
+  "Frank Kelley": {
+   "Supervisor": "Ava Wong",
+   "Manager": "William Kim"
+  },
+  "Franklin Bradley": {
+   "Supervisor": "Ava Wong",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Franklin Dixon": {
+   "Supervisor": "Emily Yamashita",
+   "Manager": "John Smith"
+  },
+  "Fred Newman": {
+   "Supervisor": "Amelia Tanaka",
+   "Manager": "Michael Lee"
+  },
+  "Frederick Cook": {
+   "Supervisor": "Scarlett Chen",
+   "Manager": "John Smith"
+  },
+  "Gabriel Campos": {
+   "Supervisor": "Abigail Suzuki",
+   "Manager": "William Kim"
+  },
+  "Gabriel Hansen": {
+   "Supervisor": "Aiden Patel",
+   "Manager": "John Smith"
+  },
+  "Garrett Kim": {
+   "Supervisor": "Elijah Yamaguchi",
+   "Manager": "John Smith"
+  },
+  "Garrett Parker": {
+   "Supervisor": "Wyatt Kim",
+   "Manager": "Michael Lee"
+  },
+  "George Gallagher": {
+   "Supervisor": "Emily Yamashita",
+   "Manager": "Michael Lee"
+  },
+  "Gilbert Johns": {
+   "Supervisor": "Zoe Yamamoto",
+   "Manager": "William Kim"
+  },
+  "Gina Henderson": {
+   "Supervisor": "Olivia Wang",
+   "Manager": "Emily Chen"
+  },
+  "Gina Richards": {
+   "Supervisor": "Logan Lee",
+   "Manager": "Emily Chen"
+  },
+  "Glenda Powell": {
+   "Supervisor": "Madison Kim",
+   "Manager": "Emily Chen"
+  },
+  "Gloria Walker": {
+   "Supervisor": "Noah Patel",
+   "Manager": "Emily Chen"
+  },
+  "Gordon Jones": {
+   "Supervisor": "Austin Johnson",
+   "Manager": "Michael Lee"
+  },
+  "Grace Martin": {
+   "Supervisor": "Jacob Sato",
+   "Manager": "Emily Chen"
+  },
+  "Gregg Perez": {
+   "Supervisor": "Olivia Suzuki",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Gregory Andrews": {
+   "Supervisor": "Mason Gupta",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Gregory Becker": {
+   "Supervisor": "Abigail Suzuki",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Gregory Davenport": {
+   "Supervisor": "Charlotte Suzuki",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Gregory Jackson": {
+   "Supervisor": "Scarlett Chen",
+   "Manager": "John Smith"
+  },
+  "Gregory Mills": {
+   "Supervisor": "Carter Park",
+   "Manager": "Michael Lee"
+  },
+  "Gregory Morales": {
+   "Supervisor": "Wyatt Kim",
+   "Manager": "William Kim"
+  },
+  "Gregory Robinson": {
+   "Supervisor": "Brayden Wong",
+   "Manager": "John Smith"
+  },
+  "Guy Duncan": {
+   "Supervisor": "Carter Park",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Haley Carroll": {
+   "Supervisor": "William Park",
+   "Manager": "John Smith"
+  },
+  "Haley Chambers DDS": {
+   "Supervisor": "Brayden Wong",
+   "Manager": "John Smith"
+  },
+  "Haley White": {
+   "Supervisor": "Harper Wong",
+   "Manager": "William Kim"
+  },
+  "Hannah Harding": {
+   "Supervisor": "Abigail Suzuki",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Hannah Miller": {
+   "Supervisor": "Harper Wong",
+   "Manager": "William Kim"
+  },
+  "Hayley Smith": {
+   "Supervisor": "Noah Patel",
+   "Manager": "Emily Chen"
+  },
+  "Heather Baker": {
+   "Supervisor": "Mason Gupta",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Heidi Blackwell": {
+   "Supervisor": "Noah Patel",
+   "Manager": "Michael Lee"
+  },
+  "Henry Hill": {
+   "Supervisor": "Nathan Patel",
+   "Manager": "Michael Lee"
+  },
+  "Henry Melendez": {
+   "Supervisor": "Abigail Suzuki",
+   "Manager": "William Kim"
+  },
+  "Herbert Rodriguez": {
+   "Supervisor": "Brayden Wong",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Holly Glover": {
+   "Supervisor": "Nathan Patel",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Holly Huang": {
+   "Supervisor": "Charlotte Suzuki",
+   "Manager": "William Kim"
+  },
+  "Holly King": {
+   "Supervisor": "Zoe Yamamoto",
+   "Manager": "Olivia Tan"
+  },
+  "Hunter Hoffman": {
+   "Supervisor": "Brayden Wong",
+   "Manager": "John Smith"
+  },
+  "Ian Boone": {
+   "Supervisor": "Lily Chen",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Ian Hall": {
+   "Supervisor": "Jackson Park",
+   "Manager": "William Kim"
+  },
+  "Jackson Brown": {
+   "Supervisor": "Mia Patel",
+   "Manager": "William Kim"
+  },
+  "Jaclyn Fields": {
+   "Supervisor": "Madison Kim",
+   "Manager": "John Smith"
+  },
+  "Jacob Arnold": {
+   "Supervisor": "William Park",
+   "Manager": "John Smith"
+  },
+  "Jacob Hendricks": {
+   "Supervisor": "Logan Lee",
+   "Manager": "Emily Chen"
+  },
+  "Jacob Hester": {
+   "Supervisor": "Emily Yamashita",
+   "Manager": "John Smith"
+  },
+  "Jacob Mitchell": {
+   "Supervisor": "Scarlett Chen",
+   "Manager": "John Smith"
+  },
+  "Jacob Moore": {
+   "Supervisor": "Ava Wong",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Jacob Mueller": {
+   "Supervisor": "Emily Yamashita",
+   "Manager": "Michael Lee"
+  },
+  "Jacob Reynolds": {
+   "Supervisor": "Wyatt Kim",
+   "Manager": "Michael Lee"
+  },
+  "Jacob Robertson Jr.": {
+   "Supervisor": "Emily Yamashita",
+   "Manager": "Michael Lee"
+  },
+  "Jacob Schroeder": {
+   "Supervisor": "Brayden Wong",
+   "Manager": "Michael Lee"
+  },
+  "Jacqueline Edwards": {
+   "Supervisor": "Carter Park",
+   "Manager": "Michael Lee"
+  },
+  "Jacqueline Glover": {
+   "Supervisor": "Jackson Park",
+   "Manager": "William Kim"
+  },
+  "Jacqueline Meadows": {
+   "Supervisor": "Ethan Nakamura",
+   "Manager": "Emily Chen"
+  },
+  "Jacqueline Roberts": {
+   "Supervisor": "Carter Park",
+   "Manager": "Michael Lee"
+  },
+  "Jacqueline Santiago": {
+   "Supervisor": "Evelyn Kimura",
+   "Manager": "John Smith"
+  },
+  "Jaime Henderson": {
+   "Supervisor": "Evelyn Kimura",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Jake Castro": {
+   "Supervisor": "Noah Patel",
+   "Manager": "Michael Lee"
+  },
+  "Jake Chapman": {
+   "Supervisor": "Wyatt Kim",
+   "Manager": "Jennifer Nguyen"
+  },
+  "James Abbott": {
+   "Supervisor": "Mason Gupta",
+   "Manager": "Jennifer Nguyen"
+  },
+  "James Barr": {
+   "Supervisor": "Olivia Suzuki",
+   "Manager": "Olivia Tan"
+  },
+  "James Blackwell": {
+   "Supervisor": "Jackson Park",
+   "Manager": "William Kim"
+  },
+  "James Blevins": {
+   "Supervisor": "Lucas Singh",
+   "Manager": "Jennifer Nguyen"
+  },
+  "James Chung": {
+   "Supervisor": "Oliver Nguyen",
+   "Manager": "John Smith"
+  },
+  "James Cunningham": {
+   "Supervisor": "Emma Park",
+   "Manager": "Jennifer Nguyen"
+  },
+  "James Duncan": {
+   "Supervisor": "Olivia Suzuki",
+   "Manager": "Jennifer Nguyen"
+  },
+  "James Ford": {
+   "Supervisor": "Emily Yamashita",
+   "Manager": "Michael Lee"
+  },
+  "James Howard": {
+   "Supervisor": "Ethan Nakamura",
+   "Manager": "Jennifer Nguyen"
+  },
+  "James Jordan": {
+   "Supervisor": "Aiden Patel",
+   "Manager": "John Smith"
+  },
+  "James Lopez": {
+   "Supervisor": "Jackson Park",
+   "Manager": "William Kim"
+  },
+  "James Mcgee": {
+   "Supervisor": "Madison Kim",
+   "Manager": "John Smith"
+  },
+  "James Padilla": {
+   "Supervisor": "Brayden Wong",
+   "Manager": "Jennifer Nguyen"
+  },
+  "James Pineda": {
+   "Supervisor": "Ava Wong",
+   "Manager": "Jennifer Nguyen"
+  },
+  "James Pollard": {
+   "Supervisor": "Ethan Tan",
+   "Manager": "William Kim"
+  },
+  "James Potter": {
+   "Supervisor": "Zoe Yamamoto",
+   "Manager": "William Kim"
+  },
+  "James Tran": {
+   "Supervisor": "Jacob Sato",
+   "Manager": "Jennifer Nguyen"
+  },
+  "James Vargas": {
+   "Supervisor": "Jackson Park",
+   "Manager": "William Kim"
+  },
+  "James Williams": {
+   "Supervisor": "Brayden Wong",
+   "Manager": "John Smith"
+  },
+  "Jamie Burnett": {
+   "Supervisor": "Mia Patel",
+   "Manager": "Olivia Tan"
+  },
+  "Jamie Butler": {
+   "Supervisor": "Ava Wong",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Jamie Knapp": {
+   "Supervisor": "Isabella Wong",
+   "Manager": "Emily Chen"
+  },
+  "Jamie Smith": {
+   "Supervisor": "Scarlett Chen",
+   "Manager": "John Smith"
+  },
+  "Janet Jackson": {
+   "Supervisor": "Nathan Patel",
+   "Manager": "Michael Lee"
+  },
+  "Janet Maxwell": {
+   "Supervisor": "Landon Tanaka",
+   "Manager": "John Smith"
+  },
+  "Janet Shea": {
+   "Supervisor": "Emma Park",
+   "Manager": "Olivia Tan"
+  },
+  "Janet Turner": {
+   "Supervisor": "Layla Taniguchi",
+   "Manager": "Emily Chen"
+  },
+  "Janice Cole": {
+   "Supervisor": "Zoe Yamamoto",
+   "Manager": "William Kim"
+  },
+  "Janice Santiago": {
+   "Supervisor": "Zoe Yamamoto",
+   "Manager": "William Kim"
+  },
+  "Jared Scott": {
+   "Supervisor": "Zoe Yamamoto",
+   "Manager": "William Kim"
+  },
+  "Jasmin Rasmussen": {
+   "Supervisor": "Abigail Suzuki",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Jasmine Maxwell": {
+   "Supervisor": "Olivia Wang",
+   "Manager": "Olivia Tan"
+  },
+  "Jasmine Reed": {
+   "Supervisor": "Emily Yamashita",
+   "Manager": "John Smith"
+  },
+  "Jason Glover": {
+   "Supervisor": "William Park",
+   "Manager": "John Smith"
+  },
+  "Jason Osborn": {
+   "Supervisor": "Abigail Suzuki",
+   "Manager": "William Kim"
+  },
+  "Jason Park": {
+   "Supervisor": "Harper Wong",
+   "Manager": "William Kim"
+  },
+  "Jason Wilson": {
+   "Supervisor": "Zoe Yamamoto",
+   "Manager": "John Smith"
+  },
+  "Jean Marshall": {
+   "Supervisor": "Elijah Yamaguchi",
+   "Manager": "Emily Chen"
+  },
+  "Jeff Lowery": {
+   "Supervisor": "Charlotte Suzuki",
+   "Manager": "William Kim"
+  },
+  "Jeffery Galvan": {
+   "Supervisor": "Abigail Suzuki",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Jeffrey Byrd": {
+   "Supervisor": "Harper Wong",
+   "Manager": "William Kim"
+  },
+  "Jeffrey Miller": {
+   "Supervisor": "Elijah Yamaguchi",
+   "Manager": "Michael Lee"
+  },
+  "Jeffrey Parker": {
+   "Supervisor": "Nathan Patel",
+   "Manager": "Michael Lee"
+  },
+  "Jeffrey Ross": {
+   "Supervisor": "Isabella Wong",
+   "Manager": "Emily Chen"
+  },
+  "Jeffrey White": {
+   "Supervisor": "Olivia Suzuki",
+   "Manager": "John Smith"
+  },
+  "Jenna Henry": {
+   "Supervisor": "Lily Chen",
+   "Manager": "Michael Lee"
+  },
+  "Jenna Jacobson": {
+   "Supervisor": "Nathan Patel",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Jenna Larson": {
+   "Supervisor": "Emily Yamashita",
+   "Manager": "John Smith"
+  },
+  "Jenna Moore": {
+   "Supervisor": "Aiden Patel",
+   "Manager": "John Smith"
+  },
+  "Jenna Rivas": {
+   "Supervisor": "Mia Patel",
+   "Manager": "John Smith"
+  },
+  "Jennifer Cline": {
+   "Supervisor": "Logan Lee",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Jennifer Cox": {
+   "Supervisor": "Evelyn Kimura",
+   "Manager": "John Smith"
+  },
+  "Jennifer Cruz": {
+   "Supervisor": "Noah Patel",
+   "Manager": "Emily Chen"
+  },
+  "Jennifer Day": {
+   "Supervisor": "Jackson Park",
+   "Manager": "John Smith"
+  },
+  "Jennifer Duke": {
+   "Supervisor": "Mia Patel",
+   "Manager": "John Smith"
+  },
+  "Jennifer Hernandez": {
+   "Supervisor": "Lily Chen",
+   "Manager": "Michael Lee"
+  },
+  "Jennifer James": {
+   "Supervisor": "Jackson Park",
+   "Manager": "William Kim"
+  },
+  "Jennifer Jones": {
+   "Supervisor": "Lucas Singh",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Jennifer Lewis": {
+   "Supervisor": "Madison Kim",
+   "Manager": "John Smith"
+  },
+  "Jennifer Martinez": {
+   "Supervisor": "Austin Johnson",
+   "Manager": "Michael Lee"
+  },
+  "Jennifer May": {
+   "Supervisor": "Zoe Yamamoto",
+   "Manager": "William Kim"
+  },
+  "Jennifer Moore": {
+   "Supervisor": "Nathan Patel",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Jennifer Morales": {
+   "Supervisor": "William Park",
+   "Manager": "John Smith"
+  },
+  "Jennifer Morris": {
+   "Supervisor": "Olivia Suzuki",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Jennifer Munoz": {
+   "Supervisor": "Aiden Patel",
+   "Manager": "John Smith"
+  },
+  "Jennifer Perry": {
+   "Supervisor": "Mia Patel",
+   "Manager": "Olivia Tan"
+  },
+  "Jennifer Vazquez": {
+   "Supervisor": "Mason Gupta",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Jennifer Webster": {
+   "Supervisor": "Evelyn Kimura",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Jenny Nicholson": {
+   "Supervisor": "Landon Tanaka",
+   "Manager": "John Smith"
+  },
+  "Jeremy Bates": {
+   "Supervisor": "Carter Park",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Jeremy Cooper": {
+   "Supervisor": "Brayden Wong",
+   "Manager": "John Smith"
+  },
+  "Jeremy George": {
+   "Supervisor": "William Park",
+   "Manager": "John Smith"
+  },
+  "Jeremy Little": {
+   "Supervisor": "Austin Johnson",
+   "Manager": "William Kim"
+  },
+  "Jerome Gray": {
+   "Supervisor": "Sophia Sato",
+   "Manager": "John Smith"
+  },
+  "Jerry Duffy": {
+   "Supervisor": "Carter Park",
+   "Manager": "Michael Lee"
+  },
+  "Jerry Green": {
+   "Supervisor": "Abigail Suzuki",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Jerry Rodriguez": {
+   "Supervisor": "Madison Kim",
+   "Manager": "Michael Lee"
+  },
+  "Jesse Blevins": {
+   "Supervisor": "Austin Johnson",
+   "Manager": "William Kim"
+  },
+  "Jesse Davis": {
+   "Supervisor": "Ethan Nakamura",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Jesse Miller": {
+   "Supervisor": "Emily Yamashita",
+   "Manager": "John Smith"
+  },
+  "Jesse Shaffer": {
+   "Supervisor": "Ethan Tan",
+   "Manager": "John Smith"
+  },
+  "Jessica Acosta": {
+   "Supervisor": "Ethan Tan",
+   "Manager": "John Smith"
+  },
+  "Jessica Allen": {
+   "Supervisor": "Abigail Suzuki",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Jessica Cook": {
+   "Supervisor": "Ethan Tan",
+   "Manager": "Michael Lee"
+  },
+  "Jessica Daugherty": {
+   "Supervisor": "Emily Yamashita",
+   "Manager": "John Smith"
+  },
+  "Jessica Fisher": {
+   "Supervisor": "Zoe Yamamoto",
+   "Manager": "John Smith"
+  },
+  "Jessica Hahn": {
+   "Supervisor": "Madison Kim",
+   "Manager": "Emily Chen"
+  },
+  "Jessica Henderson": {
+   "Supervisor": "Wyatt Kim",
+   "Manager": "Michael Lee"
+  },
+  "Jessica Jones": {
+   "Supervisor": "William Park",
+   "Manager": "John Smith"
+  },
+  "Jessica Kelly": {
+   "Supervisor": "Landon Tanaka",
+   "Manager": "Emily Chen"
+  },
+  "Jessica Mcbride": {
+   "Supervisor": "Olivia Wang",
+   "Manager": "Olivia Tan"
+  },
+  "Jessica Nixon": {
+   "Supervisor": "Harper Wong",
+   "Manager": "Emily Chen"
+  },
+  "Jessica Powell": {
+   "Supervisor": "Carter Park",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Jessica Sanders": {
+   "Supervisor": "Charlotte Suzuki",
+   "Manager": "Olivia Tan"
+  },
+  "Jessica Santos": {
+   "Supervisor": "Elijah Yamaguchi",
+   "Manager": "Emily Chen"
+  },
+  "Jessica Sawyer": {
+   "Supervisor": "Carter Park",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Jessica Williams": {
+   "Supervisor": "Lucas Singh",
+   "Manager": "John Smith"
+  },
+  "Jessica Wright": {
+   "Supervisor": "Emma Park",
+   "Manager": "John Smith"
+  },
+  "Jill Bird": {
+   "Supervisor": "Logan Lee",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Jillian Kim": {
+   "Supervisor": "Ethan Tan",
+   "Manager": "William Kim"
+  },
+  "Joanna Wright": {
+   "Supervisor": "Logan Lee",
+   "Manager": "Emily Chen"
+  },
+  "Joe Chapman": {
+   "Supervisor": "Sophia Chen",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Joe Walls": {
+   "Supervisor": "Mason Gupta",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Joel Garcia": {
+   "Supervisor": "Mia Patel",
+   "Manager": "Emily Chen"
+  },
+  "Joel Marsh": {
+   "Supervisor": "Madison Kim",
+   "Manager": "Michael Lee"
+  },
+  "John Adkins": {
+   "Supervisor": "Evelyn Kimura",
+   "Manager": "Jennifer Nguyen"
+  },
+  "John Bailey": {
+   "Supervisor": "Dylan Kim",
+   "Manager": "Michael Lee"
+  },
+  "John Barrett": {
+   "Supervisor": "Aiden Patel",
+   "Manager": "John Smith"
+  },
+  "John Bell": {
+   "Supervisor": "Ava Wong",
+   "Manager": "William Kim"
+  },
+  "John Buchanan": {
+   "Supervisor": "Noah Patel",
+   "Manager": "Emily Chen"
+  },
+  "John Carrillo": {
+   "Supervisor": "Brayden Wong",
+   "Manager": "John Smith"
+  },
+  "John Dean": {
+   "Supervisor": "Ethan Nakamura",
+   "Manager": "Jennifer Nguyen"
+  },
+  "John Gonzalez": {
+   "Supervisor": "Noah Patel",
+   "Manager": "Michael Lee"
+  },
+  "John Gordon": {
+   "Supervisor": "Zoe Yamamoto",
+   "Manager": "William Kim"
+  },
+  "John Green": {
+   "Supervisor": "Jackson Park",
+   "Manager": "William Kim"
+  },
+  "John Hoffman": {
+   "Supervisor": "Scarlett Chen",
+   "Manager": "John Smith"
+  },
+  "John Jones": {
+   "Supervisor": "Aiden Patel",
+   "Manager": "John Smith"
+  },
+  "John Joseph": {
+   "Supervisor": "Nathan Patel",
+   "Manager": "Emily Chen"
+  },
+  "John Mccall": {
+   "Supervisor": "Isabella Wong",
+   "Manager": "Emily Chen"
+  },
+  "John Miller": {
+   "Supervisor": "Emma Park",
+   "Manager": "Jennifer Nguyen"
+  },
+  "John Nelson": {
+   "Supervisor": "Layla Taniguchi",
+   "Manager": "Emily Chen"
+  },
+  "John Oneill": {
+   "Supervisor": "Aiden Patel",
+   "Manager": "Olivia Tan"
+  },
+  "John Perry": {
+   "Supervisor": "Olivia Suzuki",
+   "Manager": "Jennifer Nguyen"
+  },
+  "John Ramirez": {
+   "Supervisor": "Brayden Wong",
+   "Manager": "Jennifer Nguyen"
+  },
+  "John Richardson": {
+   "Supervisor": "Dylan Kim",
+   "Manager": "Michael Lee"
+  },
+  "John Rivera": {
+   "Supervisor": "Zoe Yamamoto",
+   "Manager": "John Smith"
+  },
+  "John Robinson": {
+   "Supervisor": "Nathan Patel",
+   "Manager": "Michael Lee"
+  },
+  "John Thompson": {
+   "Supervisor": "Mia Patel",
+   "Manager": "John Smith"
+  },
+  "John Torres": {
+   "Supervisor": "Harper Wong",
+   "Manager": "William Kim"
+  },
+  "John Wells": {
+   "Supervisor": "Noah Patel",
+   "Manager": "Michael Lee"
+  },
+  "Jon Lopez": {
+   "Supervisor": "Olivia Wang",
+   "Manager": "John Smith"
+  },
+  "Jon Moore": {
+   "Supervisor": "Ava Wong",
+   "Manager": "William Kim"
+  },
+  "Jonathan Davies": {
+   "Supervisor": "Landon Tanaka",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Jonathan Fitzgerald": {
+   "Supervisor": "Amelia Tanaka",
+   "Manager": "Michael Lee"
+  },
+  "Jonathan King": {
+   "Supervisor": "Nathan Patel",
+   "Manager": "John Smith"
+  },
+  "Jonathan Larsen": {
+   "Supervisor": "Layla Taniguchi",
+   "Manager": "Emily Chen"
+  },
+  "Jonathan Moore": {
+   "Supervisor": "Zoe Yamamoto",
+   "Manager": "John Smith"
+  },
+  "Jonathan Wilson": {
+   "Supervisor": "Scarlett Chen",
+   "Manager": "John Smith"
+  },
+  "Jonathan Wright": {
+   "Supervisor": "Olivia Suzuki",
+   "Manager": "Olivia Tan"
+  },
+  "Jordan Wilson": {
+   "Supervisor": "Abigail Suzuki",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Jorge Ingram": {
+   "Supervisor": "Elijah Yamaguchi",
+   "Manager": "Emily Chen"
+  },
+  "Jorge Williams": {
+   "Supervisor": "Lily Chen",
+   "Manager": "William Kim"
+  },
+  "Jose Herrera": {
+   "Supervisor": "Evelyn Kimura",
+   "Manager": "John Smith"
+  },
+  "Jose Jordan": {
+   "Supervisor": "Olivia Suzuki",
+   "Manager": "John Smith"
+  },
+  "Jose Pruitt": {
+   "Supervisor": "Zoe Yamamoto",
+   "Manager": "William Kim"
+  },
+  "Jose Roberts": {
+   "Supervisor": "Charlotte Suzuki",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Joseph Benson": {
+   "Supervisor": "Brayden Wong",
+   "Manager": "Michael Lee"
+  },
+  "Joseph Bradley": {
+   "Supervisor": "Aiden Patel",
+   "Manager": "John Smith"
+  },
+  "Joseph Brown": {
+   "Supervisor": "Brayden Wong",
+   "Manager": "Olivia Tan"
+  },
+  "Joseph Gibson": {
+   "Supervisor": "Layla Taniguchi",
+   "Manager": "Emily Chen"
+  },
+  "Joseph Harper": {
+   "Supervisor": "Noah Patel",
+   "Manager": "Michael Lee"
+  },
+  "Joseph Harris": {
+   "Supervisor": "Nathan Patel",
+   "Manager": "John Smith"
+  },
+  "Joseph Hines": {
+   "Supervisor": "Emma Park",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Joseph Hudson": {
+   "Supervisor": "Harper Wong",
+   "Manager": "William Kim"
+  },
+  "Joseph Padilla": {
+   "Supervisor": "Madison Kim",
+   "Manager": "Michael Lee"
+  },
+  "Joseph Smith": {
+   "Supervisor": "William Park",
+   "Manager": "John Smith"
+  },
+  "Joshua Bradshaw": {
+   "Supervisor": "Carter Park",
+   "Manager": "Michael Lee"
+  },
+  "Joshua Christensen": {
+   "Supervisor": "Ava Wong",
+   "Manager": "William Kim"
+  },
+  "Joshua Day": {
+   "Supervisor": "Emily Yamashita",
+   "Manager": "Olivia Tan"
+  },
+  "Joshua Foster": {
+   "Supervisor": "Jackson Park",
+   "Manager": "Michael Lee"
+  },
+  "Joshua Franklin": {
+   "Supervisor": "Mia Patel",
+   "Manager": "Emily Chen"
+  },
+  "Joshua Greene": {
+   "Supervisor": "Scarlett Chen",
+   "Manager": "John Smith"
+  },
+  "Joshua Mathews": {
+   "Supervisor": "Mia Patel",
+   "Manager": "John Smith"
+  },
+  "Joshua Mccarthy": {
+   "Supervisor": "Olivia Suzuki",
+   "Manager": "John Smith"
+  },
+  "Joshua Oliver": {
+   "Supervisor": "William Park",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Joshua Ortiz": {
+   "Supervisor": "Ava Wong",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Joshua Rodriguez": {
+   "Supervisor": "Jackson Park",
+   "Manager": "William Kim"
+  },
+  "Joshua Rose": {
+   "Supervisor": "Landon Tanaka",
+   "Manager": "Emily Chen"
+  },
+  "Joshua Stewart": {
+   "Supervisor": "Sophia Sato",
+   "Manager": "John Smith"
+  },
+  "Joshua Underwood": {
+   "Supervisor": "Carter Park",
+   "Manager": "Michael Lee"
+  },
+  "Joshua Valdez": {
+   "Supervisor": "Elijah Yamaguchi",
+   "Manager": "Emily Chen"
+  },
+  "Joshua Watson": {
+   "Supervisor": "Noah Patel",
+   "Manager": "Emily Chen"
+  },
+  "Joshua Webb": {
+   "Supervisor": "Brayden Wong",
+   "Manager": "John Smith"
+  },
+  "Juan Moore": {
+   "Supervisor": "Mason Gupta",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Juan Snyder": {
+   "Supervisor": "Landon Tanaka",
+   "Manager": "John Smith"
+  },
+  "Judith Wyatt": {
+   "Supervisor": "Evelyn Kimura",
+   "Manager": "John Smith"
+  },
+  "Judy Gonzalez": {
+   "Supervisor": "Elijah Yamaguchi",
+   "Manager": "John Smith"
+  },
+  "Julie Hart": {
+   "Supervisor": "Nathan Patel",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Julie Mahoney": {
+   "Supervisor": "Harper Wong",
+   "Manager": "Emily Chen"
+  },
+  "Julie Salinas": {
+   "Supervisor": "Ethan Nakamura",
+   "Manager": "Olivia Tan"
+  },
+  "Julie Williams": {
+   "Supervisor": "Zoe Yamamoto",
+   "Manager": "William Kim"
+  },
+  "Justin Carpenter": {
+   "Supervisor": "Charlotte Suzuki",
+   "Manager": "William Kim"
+  },
+  "Justin Williamson": {
+   "Supervisor": "Lily Chen",
+   "Manager": "Michael Lee"
+  },
+  "Justin Willis": {
+   "Supervisor": "Wyatt Kim",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Kara Herrera": {
+   "Supervisor": "Wyatt Kim",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Kara Jordan": {
+   "Supervisor": "Carter Park",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Karen Alvarado": {
+   "Supervisor": "Ava Wong",
+   "Manager": "William Kim"
+  },
+  "Karen Bullock": {
+   "Supervisor": "Evelyn Kimura",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Karen Carr": {
+   "Supervisor": "Lucas Singh",
+   "Manager": "William Kim"
+  },
+  "Karen Martin": {
+   "Supervisor": "Olivia Suzuki",
+   "Manager": "Olivia Tan"
+  },
+  "Karen Montgomery": {
+   "Supervisor": "Ava Wong",
+   "Manager": "William Kim"
+  },
+  "Karen Schultz": {
+   "Supervisor": "Evelyn Kimura",
+   "Manager": "John Smith"
+  },
+  "Karen Smith": {
+   "Supervisor": "Lucas Singh",
+   "Manager": "John Smith"
+  },
+  "Karen Vasquez": {
+   "Supervisor": "Emily Yamashita",
+   "Manager": "Michael Lee"
+  },
+  "Karen Williams": {
+   "Supervisor": "Logan Lee",
+   "Manager": "Emily Chen"
+  },
+  "Katelyn Horton": {
+   "Supervisor": "Mason Gupta",
+   "Manager": "Olivia Tan"
+  },
+  "Katherine Kirby": {
+   "Supervisor": "Isabella Wong",
+   "Manager": "John Smith"
+  },
+  "Katherine Simpson": {
+   "Supervisor": "Olivia Suzuki",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Katherine Walker": {
+   "Supervisor": "Olivia Wang",
+   "Manager": "Emily Chen"
+  },
+  "Kathleen Johnson": {
+   "Supervisor": "Layla Taniguchi",
+   "Manager": "Emily Chen"
+  },
+  "Kathleen Mcdonald": {
+   "Supervisor": "Mia Patel",
+   "Manager": "Olivia Tan"
+  },
+  "Kathleen Mcgee": {
+   "Supervisor": "Brayden Wong",
+   "Manager": "John Smith"
+  },
+  "Kathleen Williams": {
+   "Supervisor": "Mason Gupta",
+   "Manager": "Olivia Tan"
+  },
+  "Kathryn Jones": {
+   "Supervisor": "Ethan Nakamura",
+   "Manager": "Emily Chen"
+  },
+  "Kathryn Vasquez": {
+   "Supervisor": "Noah Patel",
+   "Manager": "Michael Lee"
+  },
+  "Kathy Decker DVM": {
+   "Supervisor": "Amelia Tanaka",
+   "Manager": "Michael Lee"
+  },
+  "Kathy Price": {
+   "Supervisor": "Mason Gupta",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Kathy Stevenson": {
+   "Supervisor": "Abigail Suzuki",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Kathy Strong": {
+   "Supervisor": "Sophia Sato",
+   "Manager": "John Smith"
+  },
+  "Kathy Weber": {
+   "Supervisor": "Emma Park",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Katrina Mendoza": {
+   "Supervisor": "Emma Park",
+   "Manager": "John Smith"
+  },
+  "Katrina Rodriguez": {
+   "Supervisor": "Elijah Yamaguchi",
+   "Manager": "John Smith"
+  },
+  "Katrina Summers": {
+   "Supervisor": "Layla Taniguchi",
+   "Manager": "Emily Chen"
+  },
+  "Katrina White": {
+   "Supervisor": "Mia Patel",
+   "Manager": "Olivia Tan"
+  },
+  "Kayla Lewis": {
+   "Supervisor": "Ava Wong",
+   "Manager": "William Kim"
+  },
+  "Kayla Martin": {
+   "Supervisor": "Nathan Patel",
+   "Manager": "Emily Chen"
+  },
+  "Kayla Spears": {
+   "Supervisor": "Ava Wong",
+   "Manager": "William Kim"
+  },
+  "Kayla Wilson": {
+   "Supervisor": "Evelyn Kimura",
+   "Manager": "John Smith"
+  },
+  "Keith Hall": {
+   "Supervisor": "Jackson Park",
+   "Manager": "William Kim"
+  },
+  "Kelly Carpenter": {
+   "Supervisor": "William Park",
+   "Manager": "John Smith"
+  },
+  "Kelly Martin": {
+   "Supervisor": "Aiden Patel",
+   "Manager": "John Smith"
+  },
+  "Kelly Moore DDS": {
+   "Supervisor": "Isabella Wong",
+   "Manager": "Emily Chen"
+  },
+  "Kelly Singh": {
+   "Supervisor": "Ava Wong",
+   "Manager": "William Kim"
+  },
+  "Kelly Thomas": {
+   "Supervisor": "Scarlett Chen",
+   "Manager": "John Smith"
+  },
+  "Kelsey Garcia": {
+   "Supervisor": "Mia Yamamoto",
+   "Manager": "Emily Chen"
+  },
+  "Kelsey Massey": {
+   "Supervisor": "Mia Patel",
+   "Manager": "Emily Chen"
+  },
+  "Kelsey Richardson": {
+   "Supervisor": "Madison Kim",
+   "Manager": "Emily Chen"
+  },
+  "Kenneth Henderson": {
+   "Supervisor": "Ava Wong",
+   "Manager": "William Kim"
+  },
+  "Kenneth Holt": {
+   "Supervisor": "Ava Wong",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Kenneth Howell": {
+   "Supervisor": "Elijah Yamaguchi",
+   "Manager": "Emily Chen"
+  },
+  "Kenneth Lara": {
+   "Supervisor": "Madison Kim",
+   "Manager": "Michael Lee"
+  },
+  "Kenneth Martin": {
+   "Supervisor": "Aiden Patel",
+   "Manager": "John Smith"
+  },
+  "Kenneth Murphy": {
+   "Supervisor": "Carter Park",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Kenneth Ramos": {
+   "Supervisor": "Aiden Patel",
+   "Manager": "Olivia Tan"
+  },
+  "Kenneth Wilson": {
+   "Supervisor": "Aiden Patel",
+   "Manager": "John Smith"
+  },
+  "Kerry Austin": {
+   "Supervisor": "Ava Wong",
+   "Manager": "Olivia Tan"
+  },
+  "Kevin Cook": {
+   "Supervisor": "Mia Patel",
+   "Manager": "John Smith"
+  },
+  "Kevin Griffin": {
+   "Supervisor": "Evelyn Kimura",
+   "Manager": "John Smith"
+  },
+  "Kevin Lane": {
+   "Supervisor": "Olivia Wang",
+   "Manager": "John Smith"
+  },
+  "Kevin Lee": {
+   "Supervisor": "Harper Wong",
+   "Manager": "William Kim"
+  },
+  "Kevin Ramos": {
+   "Supervisor": "Ethan Tan",
+   "Manager": "William Kim"
+  },
+  "Kevin Randolph": {
+   "Supervisor": "Carter Park",
+   "Manager": "Michael Lee"
+  },
+  "Kevin Scott": {
+   "Supervisor": "Aiden Patel",
+   "Manager": "John Smith"
+  },
+  "Kevin Walsh": {
+   "Supervisor": "Lily Chen",
+   "Manager": "Michael Lee"
+  },
+  "Kiara Powers": {
+   "Supervisor": "Aiden Patel",
+   "Manager": "Olivia Tan"
+  },
+  "Kim Barnes": {
+   "Supervisor": "Emma Park",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Kimberly Browning": {
+   "Supervisor": "Elijah Yamaguchi",
+   "Manager": "Emily Chen"
+  },
+  "Kimberly Bryan": {
+   "Supervisor": "Emily Yamashita",
+   "Manager": "Michael Lee"
+  },
+  "Kimberly Carter": {
+   "Supervisor": "Scarlett Chen",
+   "Manager": "John Smith"
+  },
+  "Kimberly Davidson": {
+   "Supervisor": "Noah Patel",
+   "Manager": "Emily Chen"
+  },
+  "Kimberly Mahoney": {
+   "Supervisor": "Olivia Wang",
+   "Manager": "John Smith"
+  },
+  "Kimberly Martinez": {
+   "Supervisor": "Aiden Patel",
+   "Manager": "Olivia Tan"
+  },
+  "Kimberly Medina": {
+   "Supervisor": "Lily Chen",
+   "Manager": "Michael Lee"
+  },
+  "Kimberly Miller": {
+   "Supervisor": "Abigail Suzuki",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Kimberly Morris": {
+   "Supervisor": "Carter Park",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Kimberly Oliver": {
+   "Supervisor": "Zoe Yamamoto",
+   "Manager": "William Kim"
+  },
+  "Kimberly Rogers": {
+   "Supervisor": "Scarlett Chen",
+   "Manager": "John Smith"
+  },
+  "Kimberly Smith": {
+   "Supervisor": "Zoe Yamamoto",
+   "Manager": "William Kim"
+  },
+  "Kristen Olson": {
+   "Supervisor": "Harper Wong",
+   "Manager": "William Kim"
+  },
+  "Kristen Walker": {
+   "Supervisor": "Madison Kim",
+   "Manager": "Emily Chen"
+  },
+  "Kristi Nash": {
+   "Supervisor": "Jacob Sato",
+   "Manager": "Emily Chen"
+  },
+  "Kristi Schultz": {
+   "Supervisor": "Noah Patel",
+   "Manager": "Michael Lee"
+  },
+  "Kristin Adams": {
+   "Supervisor": "Zoe Yamamoto",
+   "Manager": "John Smith"
+  },
+  "Kristin Beasley": {
+   "Supervisor": "Evelyn Kimura",
+   "Manager": "John Smith"
+  },
+  "Kristin Bowman": {
+   "Supervisor": "Charlotte Suzuki",
+   "Manager": "Olivia Tan"
+  },
+  "Kristin Campbell": {
+   "Supervisor": "Ethan Tan",
+   "Manager": "Michael Lee"
+  },
+  "Kristin King": {
+   "Supervisor": "Dylan Kim",
+   "Manager": "Michael Lee"
+  },
+  "Kristina Foster": {
+   "Supervisor": "Landon Tanaka",
+   "Manager": "Emily Chen"
+  },
+  "Kristina Gutierrez": {
+   "Supervisor": "Jackson Park",
+   "Manager": "William Kim"
+  },
+  "Kristine Banks": {
+   "Supervisor": "Mia Patel",
+   "Manager": "Emily Chen"
+  },
+  "Kyle Barrett": {
+   "Supervisor": "Abigail Suzuki",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Kyle Jones": {
+   "Supervisor": "Mason Gupta",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Kyle Merritt": {
+   "Supervisor": "Mia Patel",
+   "Manager": "William Kim"
+  },
+  "Kyle Warren DDS": {
+   "Supervisor": "Scarlett Chen",
+   "Manager": "John Smith"
+  },
+  "Lance Case": {
+   "Supervisor": "Mia Patel",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Larry Sanchez": {
+   "Supervisor": "Landon Tanaka",
+   "Manager": "John Smith"
+  },
+  "Latoya Blair": {
+   "Supervisor": "Olivia Suzuki",
+   "Manager": "John Smith"
+  },
+  "Laura Allen": {
+   "Supervisor": "Oliver Nguyen",
+   "Manager": "John Smith"
+  },
+  "Laura Beck": {
+   "Supervisor": "Noah Patel",
+   "Manager": "Emily Chen"
+  },
+  "Laura Farmer": {
+   "Supervisor": "Nathan Patel",
+   "Manager": "Michael Lee"
+  },
+  "Laura Gonzales": {
+   "Supervisor": "Zoe Yamamoto",
+   "Manager": "William Kim"
+  },
+  "Laura Patel": {
+   "Supervisor": "Landon Tanaka",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Laura Pratt": {
+   "Supervisor": "Emma Park",
+   "Manager": "John Smith"
+  },
+  "Laura Smith": {
+   "Supervisor": "Evelyn Kimura",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Laura Young": {
+   "Supervisor": "Austin Johnson",
+   "Manager": "William Kim"
+  },
+  "Lauren Dominguez": {
+   "Supervisor": "Charlotte Suzuki",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Lauren Juarez": {
+   "Supervisor": "Jacob Sato",
+   "Manager": "Emily Chen"
+  },
+  "Lauren Martin": {
+   "Supervisor": "Mason Gupta",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Lauren Simmons": {
+   "Supervisor": "Wyatt Kim",
+   "Manager": "Michael Lee"
+  },
+  "Laurie Wilson": {
+   "Supervisor": "Nathan Patel",
+   "Manager": "Michael Lee"
+  },
+  "Lawrence Phillips": {
+   "Supervisor": "Sophia Sato",
+   "Manager": "John Smith"
+  },
+  "Lee Allen PhD": {
+   "Supervisor": "Elijah Yamaguchi",
+   "Manager": "John Smith"
+  },
+  "Leslie Houston": {
+   "Supervisor": "Evelyn Kimura",
+   "Manager": "John Smith"
+  },
+  "Levi Bridges": {
+   "Supervisor": "Emma Park",
+   "Manager": "John Smith"
+  },
+  "Linda Butler": {
+   "Supervisor": "Charlotte Suzuki",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Linda Foster": {
+   "Supervisor": "Noah Patel",
+   "Manager": "Emily Chen"
+  },
+  "Linda Murray": {
+   "Supervisor": "Landon Tanaka",
+   "Manager": "Emily Chen"
+  },
+  "Lindsay Campbell": {
+   "Supervisor": "Noah Patel",
+   "Manager": "Michael Lee"
+  },
+  "Lindsay Ward": {
+   "Supervisor": "Harper Wong",
+   "Manager": "William Kim"
+  },
+  "Lindsey Colon": {
+   "Supervisor": "William Park",
+   "Manager": "John Smith"
+  },
+  "Lindsey Smith": {
+   "Supervisor": "Nathan Patel",
+   "Manager": "John Smith"
+  },
+  "Lisa Brennan": {
+   "Supervisor": "Zoe Yamamoto",
+   "Manager": "William Kim"
+  },
+  "Lisa Johnson": {
+   "Supervisor": "Carter Park",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Lisa Lawrence": {
+   "Supervisor": "Abigail Suzuki",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Lisa Lopez": {
+   "Supervisor": "Mia Patel",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Lisa May": {
+   "Supervisor": "Olivia Suzuki",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Lisa Osborne": {
+   "Supervisor": "Wyatt Kim",
+   "Manager": "Michael Lee"
+  },
+  "Lisa Padilla": {
+   "Supervisor": "Mason Gupta",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Lisa Singleton": {
+   "Supervisor": "Olivia Suzuki",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Lisa Thompson DVM": {
+   "Supervisor": "Carter Park",
+   "Manager": "Michael Lee"
+  },
+  "Lisa Wall": {
+   "Supervisor": "Amelia Tanaka",
+   "Manager": "Emily Chen"
+  },
+  "Lisa Wilson": {
+   "Supervisor": "Isabella Wong",
+   "Manager": "Emily Chen"
+  },
+  "Lisa Zamora": {
+   "Supervisor": "Noah Patel",
+   "Manager": "Emily Chen"
+  },
+  "Logan Barnett": {
+   "Supervisor": "William Park",
+   "Manager": "John Smith"
+  },
+  "Lori Daugherty": {
+   "Supervisor": "Mia Patel",
+   "Manager": "Emily Chen"
+  },
+  "Lorraine Smith": {
+   "Supervisor": "Carter Park",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Louis Herrera": {
+   "Supervisor": "Jackson Park",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Luis Bell": {
+   "Supervisor": "Austin Johnson",
+   "Manager": "Michael Lee"
+  },
+  "Luis Ramsey": {
+   "Supervisor": "Noah Patel",
+   "Manager": "Emily Chen"
+  },
+  "Luis Werner": {
+   "Supervisor": "Brayden Wong",
+   "Manager": "John Smith"
+  },
+  "Luke Brown": {
+   "Supervisor": "Alexander Tanaka",
+   "Manager": "Michael Lee"
+  },
+  "Luke Finley": {
+   "Supervisor": "Jacob Sato",
+   "Manager": "Emily Chen"
+  },
+  "Luke Schultz": {
+   "Supervisor": "Austin Johnson",
+   "Manager": "Michael Lee"
+  },
+  "Lynn Collins": {
+   "Supervisor": "Noah Patel",
+   "Manager": "Michael Lee"
+  },
+  "Lynn Gross": {
+   "Supervisor": "Mia Patel",
+   "Manager": "John Smith"
+  },
+  "Mackenzie Phillips": {
+   "Supervisor": "Emma Park",
+   "Manager": "John Smith"
+  },
+  "Mackenzie Scott MD": {
+   "Supervisor": "Emma Park",
+   "Manager": "John Smith"
+  },
+  "Madison Flores": {
+   "Supervisor": "Ethan Tan",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Makayla Randall": {
+   "Supervisor": "Ethan Nakamura",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Marc Roberts": {
+   "Supervisor": "Alexander Tanaka",
+   "Manager": "Michael Lee"
+  },
+  "Marcia Mendez": {
+   "Supervisor": "Brayden Wong",
+   "Manager": "Michael Lee"
+  },
+  "Marcus Lynch": {
+   "Supervisor": "Lucas Singh",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Margaret Prince": {
+   "Supervisor": "Carter Park",
+   "Manager": "Michael Lee"
+  },
+  "Maria West": {
+   "Supervisor": "Mia Patel",
+   "Manager": "Olivia Tan"
+  },
+  "Marie Acosta": {
+   "Supervisor": "Mia Patel",
+   "Manager": "William Kim"
+  },
+  "Marie Vance": {
+   "Supervisor": "Logan Lee",
+   "Manager": "William Kim"
+  },
+  "Mario Simpson": {
+   "Supervisor": "Nathan Patel",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Mario Terrell": {
+   "Supervisor": "Elijah Yamaguchi",
+   "Manager": "John Smith"
+  },
+  "Mark Black": {
+   "Supervisor": "Sophia Sato",
+   "Manager": "John Smith"
+  },
+  "Mark Cook": {
+   "Supervisor": "Zoe Yamamoto",
+   "Manager": "William Kim"
+  },
+  "Mark Fitzpatrick": {
+   "Supervisor": "Carter Park",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Mark Garcia": {
+   "Supervisor": "Wyatt Kim",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Mark Gonzalez": {
+   "Supervisor": "Amelia Tanaka",
+   "Manager": "Emily Chen"
+  },
+  "Mark Hickman": {
+   "Supervisor": "Zoe Yamamoto",
+   "Manager": "William Kim"
+  },
+  "Mark Kaufman Jr.": {
+   "Supervisor": "Jackson Park",
+   "Manager": "William Kim"
+  },
+  "Mark Lucas": {
+   "Supervisor": "Brayden Wong",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Mark Pollard": {
+   "Supervisor": "Noah Patel",
+   "Manager": "Emily Chen"
+  },
+  "Mark Ruiz": {
+   "Supervisor": "Lucas Singh",
+   "Manager": "John Smith"
+  },
+  "Mark Taylor": {
+   "Supervisor": "Olivia Suzuki",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Mark Vasquez": {
+   "Supervisor": "Aiden Patel",
+   "Manager": "Olivia Tan"
+  },
+  "Mark Wilson": {
+   "Supervisor": "Scarlett Chen",
+   "Manager": "John Smith"
+  },
+  "Marvin Rivera": {
+   "Supervisor": "Carter Park",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Mary Esparza": {
+   "Supervisor": "Elijah Yamaguchi",
+   "Manager": "Michael Lee"
+  },
+  "Mary Hopkins": {
+   "Supervisor": "Zoe Yamamoto",
+   "Manager": "John Smith"
+  },
+  "Mary Huff": {
+   "Supervisor": "Mia Patel",
+   "Manager": "William Kim"
+  },
+  "Mary Hughes": {
+   "Supervisor": "Elijah Yamaguchi",
+   "Manager": "Emily Chen"
+  },
+  "Mary Johnston": {
+   "Supervisor": "Zoe Yamamoto",
+   "Manager": "John Smith"
+  },
+  "Mary Orr": {
+   "Supervisor": "Ethan Tan",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Mary Powell": {
+   "Supervisor": "Emma Park",
+   "Manager": "John Smith"
+  },
+  "Mary Quinn": {
+   "Supervisor": "Mason Gupta",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Mary Ross": {
+   "Supervisor": "Olivia Suzuki",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Mary Smith": {
+   "Supervisor": "Charlotte Suzuki",
+   "Manager": "Olivia Tan"
+  },
+  "Mary Taylor": {
+   "Supervisor": "Jackson Park",
+   "Manager": "William Kim"
+  },
+  "Mary Vasquez": {
+   "Supervisor": "Olivia Wang",
+   "Manager": "Olivia Tan"
+  },
+  "Mason Mitchell": {
+   "Supervisor": "Ava Wong",
+   "Manager": "William Kim"
+  },
+  "Matthew Alexander": {
+   "Supervisor": "Emily Yamashita",
+   "Manager": "William Kim"
+  },
+  "Matthew Bennett": {
+   "Supervisor": "Olivia Wang",
+   "Manager": "John Smith"
+  },
+  "Matthew Calderon": {
+   "Supervisor": "Abigail Suzuki",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Matthew Callahan": {
+   "Supervisor": "Evelyn Kimura",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Matthew Graham": {
+   "Supervisor": "Aiden Patel",
+   "Manager": "Olivia Tan"
+  },
+  "Matthew Grimes": {
+   "Supervisor": "Layla Taniguchi",
+   "Manager": "Olivia Tan"
+  },
+  "Matthew Lambert": {
+   "Supervisor": "Olivia Wang",
+   "Manager": "Olivia Tan"
+  },
+  "Matthew Mendoza MD": {
+   "Supervisor": "William Park",
+   "Manager": "John Smith"
+  },
+  "Matthew Miller": {
+   "Supervisor": "Elijah Yamaguchi",
+   "Manager": "Michael Lee"
+  },
+  "Matthew Reynolds": {
+   "Supervisor": "Evelyn Kimura",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Matthew Rodriguez": {
+   "Supervisor": "Isabella Wong",
+   "Manager": "Emily Chen"
+  },
+  "Matthew Ross": {
+   "Supervisor": "Ava Wong",
+   "Manager": "William Kim"
+  },
+  "Matthew Singleton": {
+   "Supervisor": "Austin Johnson",
+   "Manager": "William Kim"
+  },
+  "Matthew White PhD": {
+   "Supervisor": "Scarlett Chen",
+   "Manager": "John Smith"
+  },
+  "Matthew Wolf": {
+   "Supervisor": "Noah Patel",
+   "Manager": "Michael Lee"
+  },
+  "Maxwell Castillo": {
+   "Supervisor": "Scarlett Chen",
+   "Manager": "John Smith"
+  },
+  "Megan Bartlett": {
+   "Supervisor": "Carter Park",
+   "Manager": "Michael Lee"
+  },
+  "Megan Brown": {
+   "Supervisor": "Ava Wong",
+   "Manager": "William Kim"
+  },
+  "Megan Henderson": {
+   "Supervisor": "Logan Lee",
+   "Manager": "Emily Chen"
+  },
+  "Megan Hernandez": {
+   "Supervisor": "Logan Lee",
+   "Manager": "William Kim"
+  },
+  "Megan Preston": {
+   "Supervisor": "Emily Yamashita",
+   "Manager": "John Smith"
+  },
+  "Megan Smith": {
+   "Supervisor": "Ava Wong",
+   "Manager": "Olivia Tan"
+  },
+  "Meghan Holmes": {
+   "Supervisor": "Olivia Suzuki",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Melanie Anderson": {
+   "Supervisor": "Ava Wong",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Melanie Cortez": {
+   "Supervisor": "Mason Gupta",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Melanie Lee": {
+   "Supervisor": "Aiden Patel",
+   "Manager": "John Smith"
+  },
+  "Melinda Allen": {
+   "Supervisor": "Harper Wong",
+   "Manager": "William Kim"
+  },
+  "Melinda Mills": {
+   "Supervisor": "Emma Park",
+   "Manager": "John Smith"
+  },
+  "Melinda Montgomery": {
+   "Supervisor": "Landon Tanaka",
+   "Manager": "Emily Chen"
+  },
+  "Melissa Castillo": {
+   "Supervisor": "Elijah Yamaguchi",
+   "Manager": "Michael Lee"
+  },
+  "Melissa Grant": {
+   "Supervisor": "Zoe Yamamoto",
+   "Manager": "John Smith"
+  },
+  "Melissa Mcclain MD": {
+   "Supervisor": "Austin Johnson",
+   "Manager": "William Kim"
+  },
+  "Melissa Murray": {
+   "Supervisor": "Logan Lee",
+   "Manager": "Emily Chen"
+  },
+  "Melissa Nelson": {
+   "Supervisor": "Austin Johnson",
+   "Manager": "William Kim"
+  },
+  "Melissa Robinson": {
+   "Supervisor": "Elijah Yamaguchi",
+   "Manager": "Emily Chen"
+  },
+  "Melissa Russell": {
+   "Supervisor": "Harper Wong",
+   "Manager": "Emily Chen"
+  },
+  "Melissa Spence": {
+   "Supervisor": "Zoe Yamamoto",
+   "Manager": "John Smith"
+  },
+  "Melissa Taylor": {
+   "Supervisor": "Zoe Yamamoto",
+   "Manager": "Emily Chen"
+  },
+  "Melissa West": {
+   "Supervisor": "William Park",
+   "Manager": "John Smith"
+  },
+  "Melissa Woods": {
+   "Supervisor": "Mason Gupta",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Melody Jackson": {
+   "Supervisor": "Isabella Wong",
+   "Manager": "Emily Chen"
+  },
+  "Melvin Pace": {
+   "Supervisor": "Emma Park",
+   "Manager": "John Smith"
+  },
+  "Michael Abbott": {
+   "Supervisor": "Ethan Nakamura",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Michael Allen": {
+   "Supervisor": "Mia Patel",
+   "Manager": "Olivia Tan"
+  },
+  "Michael Barrett": {
+   "Supervisor": "Ava Wong",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Michael Brady": {
+   "Supervisor": "Layla Taniguchi",
+   "Manager": "Emily Chen"
+  },
+  "Michael Branch": {
+   "Supervisor": "Jackson Park",
+   "Manager": "William Kim"
+  },
+  "Michael Carson": {
+   "Supervisor": "Abigail Suzuki",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Michael Cooper": {
+   "Supervisor": "Ethan Nakamura",
+   "Manager": "Emily Chen"
+  },
+  "Michael Davis": {
+   "Supervisor": "Evelyn Kimura",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Michael Dunlap": {
+   "Supervisor": "Charlotte Suzuki",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Michael Eaton": {
+   "Supervisor": "Ethan Tan",
+   "Manager": "William Kim"
+  },
+  "Michael Ellison": {
+   "Supervisor": "Ethan Nakamura",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Michael Gomez": {
+   "Supervisor": "Mia Patel",
+   "Manager": "John Smith"
+  },
+  "Michael Hart": {
+   "Supervisor": "Mason Gupta",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Michael Jenkins": {
+   "Supervisor": "Emma Park",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Michael Johnson": {
+   "Supervisor": "Nathan Patel",
+   "Manager": "Michael Lee"
+  },
+  "Michael Larson": {
+   "Supervisor": "Emma Park",
+   "Manager": "John Smith"
+  },
+  "Michael Liu": {
+   "Supervisor": "Elijah Yamaguchi",
+   "Manager": "John Smith"
+  },
+  "Michael Martin": {
+   "Supervisor": "Noah Patel",
+   "Manager": "Michael Lee"
+  },
+  "Michael Mckee": {
+   "Supervisor": "Emily Yamashita",
+   "Manager": "William Kim"
+  },
+  "Michael Miles": {
+   "Supervisor": "Elijah Yamaguchi",
+   "Manager": "Michael Lee"
+  },
+  "Michael Miller": {
+   "Supervisor": "Sophia Sato",
+   "Manager": "John Smith"
+  },
+  "Michael Morton": {
+   "Supervisor": "Scarlett Chen",
+   "Manager": "John Smith"
+  },
+  "Michael Newman": {
+   "Supervisor": "Landon Tanaka",
+   "Manager": "John Smith"
+  },
+  "Michael Olsen": {
+   "Supervisor": "Brayden Wong",
+   "Manager": "John Smith"
+  },
+  "Michael Perez": {
+   "Supervisor": "Emma Park",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Michael Pitts": {
+   "Supervisor": "William Park",
+   "Manager": "John Smith"
+  },
+  "Michael Reilly": {
+   "Supervisor": "Ethan Nakamura",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Michael Rodriguez": {
+   "Supervisor": "Carter Park",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Michael Ruiz": {
+   "Supervisor": "Madison Kim",
+   "Manager": "John Smith"
+  },
+  "Michael Scott": {
+   "Supervisor": "Olivia Wang",
+   "Manager": "John Smith"
+  },
+  "Michael Silva": {
+   "Supervisor": "Elijah Yamaguchi",
+   "Manager": "John Smith"
+  },
+  "Michael Stevens": {
+   "Supervisor": "Jacob Sato",
+   "Manager": "Emily Chen"
+  },
+  "Michael Thomas": {
+   "Supervisor": "Logan Lee",
+   "Manager": "Emily Chen"
+  },
+  "Michael Torres": {
+   "Supervisor": "Scarlett Chen",
+   "Manager": "John Smith"
+  },
+  "Michael White": {
+   "Supervisor": "Dylan Kim",
+   "Manager": "Michael Lee"
+  },
+  "Micheal Morgan": {
+   "Supervisor": "Mia Patel",
+   "Manager": "Emily Chen"
+  },
+  "Micheal Wagner": {
+   "Supervisor": "Aiden Patel",
+   "Manager": "John Smith"
+  },
+  "Michele Davidson": {
+   "Supervisor": "Nathan Patel",
+   "Manager": "Michael Lee"
+  },
+  "Michele Kramer": {
+   "Supervisor": "William Park",
+   "Manager": "John Smith"
+  },
+  "Michele Roberts": {
+   "Supervisor": "Abigail Suzuki",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Michelle Banks": {
+   "Supervisor": "Nathan Patel",
+   "Manager": "Michael Lee"
+  },
+  "Michelle Christensen": {
+   "Supervisor": "Nathan Patel",
+   "Manager": "Michael Lee"
+  },
+  "Michelle Clark": {
+   "Supervisor": "Ethan Tan",
+   "Manager": "John Smith"
+  },
+  "Michelle Cunningham": {
+   "Supervisor": "Emma Park",
+   "Manager": "John Smith"
+  },
+  "Michelle Curry": {
+   "Supervisor": "Scarlett Chen",
+   "Manager": "John Smith"
+  },
+  "Michelle Garrison": {
+   "Supervisor": "Jackson Park",
+   "Manager": "John Smith"
+  },
+  "Michelle Hart": {
+   "Supervisor": "Aiden Patel",
+   "Manager": "John Smith"
+  },
+  "Michelle Larson": {
+   "Supervisor": "Ava Wong",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Michelle Moore": {
+   "Supervisor": "Lucas Singh",
+   "Manager": "William Kim"
+  },
+  "Michelle Reeves": {
+   "Supervisor": "Mia Patel",
+   "Manager": "Emily Chen"
+  },
+  "Michelle Smith": {
+   "Supervisor": "Ava Wong",
+   "Manager": "William Kim"
+  },
+  "Michelle Whitehead": {
+   "Supervisor": "Carter Park",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Michelle Williams": {
+   "Supervisor": "Mason Gupta",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Mikayla Wright": {
+   "Supervisor": "Jackson Park",
+   "Manager": "William Kim"
+  },
+  "Mike Fields": {
+   "Supervisor": "Madison Kim",
+   "Manager": "John Smith"
+  },
+  "Mike Frost": {
+   "Supervisor": "Madison Kim",
+   "Manager": "Emily Chen"
+  },
+  "Miranda Lewis": {
+   "Supervisor": "Ava Wong",
+   "Manager": "William Kim"
+  },
+  "Miss Donna Robertson": {
+   "Supervisor": "Jackson Park",
+   "Manager": "William Kim"
+  },
+  "Miss Patricia Mack DDS": {
+   "Supervisor": "Noah Patel",
+   "Manager": "Emily Chen"
+  },
+  "Misty Castillo": {
+   "Supervisor": "Sophia Chen",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Molly Lozano": {
+   "Supervisor": "Emma Park",
+   "Manager": "John Smith"
+  },
+  "Molly Wright": {
+   "Supervisor": "Mia Patel",
+   "Manager": "John Smith"
+  },
+  "Monica Edwards": {
+   "Supervisor": "Harper Wong",
+   "Manager": "Emily Chen"
+  },
+  "Monica Newton": {
+   "Supervisor": "Jackson Park",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Monique Andersen": {
+   "Supervisor": "Landon Tanaka",
+   "Manager": "Emily Chen"
+  },
+  "Monique Graham": {
+   "Supervisor": "Elijah Yamaguchi",
+   "Manager": "Michael Lee"
+  },
+  "Morgan Floyd": {
+   "Supervisor": "Ethan Tan",
+   "Manager": "William Kim"
+  },
+  "Morgan Gomez": {
+   "Supervisor": "Jackson Park",
+   "Manager": "William Kim"
+  },
+  "Morgan Smith": {
+   "Supervisor": "Isabella Wong",
+   "Manager": "Emily Chen"
+  },
+  "Morgan Zavala": {
+   "Supervisor": "Nathan Patel",
+   "Manager": "Emily Chen"
+  },
+  "Mr. Albert Clark DDS": {
+   "Supervisor": "Olivia Suzuki",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Mr. Allen Fisher": {
+   "Supervisor": "Landon Tanaka",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Mr. Christopher Peterson DDS": {
+   "Supervisor": "Austin Johnson",
+   "Manager": "William Kim"
+  },
+  "Mr. Daniel Carter": {
+   "Supervisor": "Ava Wong",
+   "Manager": "William Kim"
+  },
+  "Mr. Drew Miller": {
+   "Supervisor": "Emily Yamashita",
+   "Manager": "William Kim"
+  },
+  "Mr. George Hall Jr.": {
+   "Supervisor": "Brayden Wong",
+   "Manager": "John Smith"
+  },
+  "Mr. Gregory Payne": {
+   "Supervisor": "Mia Patel",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Mr. Jeremy Sanchez": {
+   "Supervisor": "Wyatt Kim",
+   "Manager": "Michael Lee"
+  },
+  "Mr. Jonathan Hernandez MD": {
+   "Supervisor": "Mason Gupta",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Mr. Nathaniel Smith": {
+   "Supervisor": "Austin Johnson",
+   "Manager": "William Kim"
+  },
+  "Mr. William Adams MD": {
+   "Supervisor": "Noah Patel",
+   "Manager": "Emily Chen"
+  },
+  "Mrs. Heather Williams": {
+   "Supervisor": "Isabella Wong",
+   "Manager": "Emily Chen"
+  },
+  "Mrs. Jennifer Stone": {
+   "Supervisor": "Dylan Kim",
+   "Manager": "Michael Lee"
+  },
+  "Mrs. Jordan Miller": {
+   "Supervisor": "Sophia Sato",
+   "Manager": "John Smith"
+  },
+  "Mrs. Kimberly Daniels": {
+   "Supervisor": "Ava Wong",
+   "Manager": "William Kim"
+  },
+  "Mrs. Sandra Johnson": {
+   "Supervisor": "Evelyn Kimura",
+   "Manager": "John Smith"
+  },
+  "Ms. Karen Moore": {
+   "Supervisor": "Evelyn Kimura",
+   "Manager": "John Smith"
+  },
+  "Ms. Rachel Smith DDS": {
+   "Supervisor": "Ava Wong",
+   "Manager": "William Kim"
+  },
+  "Nancy Baker": {
+   "Supervisor": "Olivia Wang",
+   "Manager": "John Smith"
+  },
+  "Nancy Singh": {
+   "Supervisor": "Noah Patel",
+   "Manager": "Emily Chen"
+  },
+  "Natalie Gonzales": {
+   "Supervisor": "Noah Patel",
+   "Manager": "Michael Lee"
+  },
+  "Natasha Hunter": {
+   "Supervisor": "Abigail Suzuki",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Nathan Allen": {
+   "Supervisor": "Sophia Chen",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Nathan Jones": {
+   "Supervisor": "Ethan Tan",
+   "Manager": "John Smith"
+  },
+  "Nathan Nguyen": {
+   "Supervisor": "Ethan Nakamura",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Nathan Riley": {
+   "Supervisor": "Emily Yamashita",
+   "Manager": "William Kim"
+  },
+  "Nathan Wilson": {
+   "Supervisor": "Mia Patel",
+   "Manager": "John Smith"
+  },
+  "Nathan Young": {
+   "Supervisor": "Madison Kim",
+   "Manager": "John Smith"
+  },
+  "Nathaniel Smith": {
+   "Supervisor": "Evelyn Kimura",
+   "Manager": "John Smith"
+  },
+  "Nicholas Mata": {
+   "Supervisor": "Wyatt Kim",
+   "Manager": "Michael Lee"
+  },
+  "Nicholas Payne": {
+   "Supervisor": "Olivia Suzuki",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Nicholas Wright": {
+   "Supervisor": "Ava Wong",
+   "Manager": "Olivia Tan"
+  },
+  "Nichole Price": {
+   "Supervisor": "Sophia Sato",
+   "Manager": "John Smith"
+  },
+  "Nicole Chavez": {
+   "Supervisor": "Alexander Tanaka",
+   "Manager": "Michael Lee"
+  },
+  "Nicole Choi": {
+   "Supervisor": "Ava Wong",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Nicole Cummings": {
+   "Supervisor": "Jackson Park",
+   "Manager": "John Smith"
+  },
+  "Nicole Gallagher": {
+   "Supervisor": "Lucas Singh",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Nicole Green": {
+   "Supervisor": "Elijah Yamaguchi",
+   "Manager": "John Smith"
+  },
+  "Nicole Harper": {
+   "Supervisor": "Austin Johnson",
+   "Manager": "William Kim"
+  },
+  "Nicole Hernandez": {
+   "Supervisor": "Noah Patel",
+   "Manager": "Michael Lee"
+  },
+  "Nicole Hicks": {
+   "Supervisor": "Jackson Park",
+   "Manager": "Michael Lee"
+  },
+  "Nicole Jones": {
+   "Supervisor": "Jackson Park",
+   "Manager": "Michael Lee"
+  },
+  "Nicole Miranda": {
+   "Supervisor": "Charlotte Suzuki",
+   "Manager": "Olivia Tan"
+  },
+  "Nicole Patel": {
+   "Supervisor": "William Park",
+   "Manager": "John Smith"
+  },
+  "Nicole Simpson DVM": {
+   "Supervisor": "Mason Gupta",
+   "Manager": "Olivia Tan"
+  },
+  "Nicole Thomas": {
+   "Supervisor": "Wyatt Kim",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Nicole Zavala": {
+   "Supervisor": "Oliver Nguyen",
+   "Manager": "John Smith"
+  },
+  "Noah Chase": {
+   "Supervisor": "Evelyn Kimura",
+   "Manager": "John Smith"
+  },
+  "Norma Davis": {
+   "Supervisor": "Aiden Patel",
+   "Manager": "John Smith"
+  },
+  "Olivia Alvarez": {
+   "Supervisor": "Noah Patel",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Olivia Nguyen": {
+   "Supervisor": "Carter Park",
+   "Manager": "Michael Lee"
+  },
+  "Olivia Villa": {
+   "Supervisor": "Mia Yamamoto",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Omar Odonnell": {
+   "Supervisor": "Nathan Patel",
+   "Manager": "John Smith"
+  },
+  "Oscar Mcdowell": {
+   "Supervisor": "Amelia Tanaka",
+   "Manager": "Emily Chen"
+  },
+  "Pamela Hughes": {
+   "Supervisor": "Dylan Kim",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Pamela Johnson": {
+   "Supervisor": "Scarlett Chen",
+   "Manager": "John Smith"
+  },
+  "Pamela Mendoza": {
+   "Supervisor": "Ava Wong",
+   "Manager": "William Kim"
+  },
+  "Pamela Perez": {
+   "Supervisor": "Zoe Yamamoto",
+   "Manager": "John Smith"
+  },
+  "Pamela Robinson": {
+   "Supervisor": "Madison Kim",
+   "Manager": "Emily Chen"
+  },
+  "Pamela Stevens": {
+   "Supervisor": "Jackson Park",
+   "Manager": "John Smith"
+  },
+  "Patricia Anderson": {
+   "Supervisor": "Brayden Wong",
+   "Manager": "John Smith"
+  },
+  "Patricia Cross": {
+   "Supervisor": "Mason Gupta",
+   "Manager": "Olivia Tan"
+  },
+  "Patricia Duarte": {
+   "Supervisor": "Elijah Yamaguchi",
+   "Manager": "Emily Chen"
+  },
+  "Patricia Holmes": {
+   "Supervisor": "Emma Park",
+   "Manager": "John Smith"
+  },
+  "Patricia Lambert": {
+   "Supervisor": "Landon Tanaka",
+   "Manager": "John Smith"
+  },
+  "Patricia Moore": {
+   "Supervisor": "Brayden Wong",
+   "Manager": "John Smith"
+  },
+  "Patrick Flores": {
+   "Supervisor": "Olivia Wang",
+   "Manager": "John Smith"
+  },
+  "Patrick Lee Jr.": {
+   "Supervisor": "Noah Patel",
+   "Manager": "Michael Lee"
+  },
+  "Patrick Shelton": {
+   "Supervisor": "Olivia Suzuki",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Patty Gutierrez": {
+   "Supervisor": "Elijah Yamaguchi",
+   "Manager": "John Smith"
+  },
+  "Paul Cunningham DVM": {
+   "Supervisor": "Nathan Patel",
+   "Manager": "John Smith"
+  },
+  "Paul Gill": {
+   "Supervisor": "Brayden Wong",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Paul Hamilton": {
+   "Supervisor": "Lily Chen",
+   "Manager": "Michael Lee"
+  },
+  "Paul Johnson": {
+   "Supervisor": "Dylan Kim",
+   "Manager": "Michael Lee"
+  },
+  "Paul Mack": {
+   "Supervisor": "Emma Park",
+   "Manager": "John Smith"
+  },
+  "Paul Montgomery": {
+   "Supervisor": "Mia Patel",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Paul Preston": {
+   "Supervisor": "Noah Patel",
+   "Manager": "Michael Lee"
+  },
+  "Paul Roach": {
+   "Supervisor": "Abigail Suzuki",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Paul Ryan": {
+   "Supervisor": "Elijah Yamaguchi",
+   "Manager": "John Smith"
+  },
+  "Paula Brooks": {
+   "Supervisor": "Austin Johnson",
+   "Manager": "William Kim"
+  },
+  "Paula Castillo": {
+   "Supervisor": "Landon Tanaka",
+   "Manager": "Emily Chen"
+  },
+  "Paula Peters": {
+   "Supervisor": "Noah Patel",
+   "Manager": "Olivia Tan"
+  },
+  "Paula Wilkins": {
+   "Supervisor": "Emma Park",
+   "Manager": "John Smith"
+  },
+  "Penny Bradley": {
+   "Supervisor": "Wyatt Kim",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Penny Lam": {
+   "Supervisor": "Elijah Yamaguchi",
+   "Manager": "Emily Chen"
+  },
+  "Peter Lawrence": {
+   "Supervisor": "Dylan Kim",
+   "Manager": "Olivia Tan"
+  },
+  "Peter Thomas": {
+   "Supervisor": "Abigail Suzuki",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Philip Harmon": {
+   "Supervisor": "Emma Park",
+   "Manager": "John Smith"
+  },
+  "Phillip Mccoy": {
+   "Supervisor": "Lily Chen",
+   "Manager": "Michael Lee"
+  },
+  "Rachel Avila": {
+   "Supervisor": "Lucas Singh",
+   "Manager": "John Smith"
+  },
+  "Rachel Barnes": {
+   "Supervisor": "Emma Park",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Rachel Green": {
+   "Supervisor": "Alexander Tanaka",
+   "Manager": "Michael Lee"
+  },
+  "Rachel Parker": {
+   "Supervisor": "Ethan Nakamura",
+   "Manager": "Emily Chen"
+  },
+  "Rachel Peters": {
+   "Supervisor": "Aiden Patel",
+   "Manager": "John Smith"
+  },
+  "Rachel Reid": {
+   "Supervisor": "Ethan Tan",
+   "Manager": "William Kim"
+  },
+  "Rachel Smith": {
+   "Supervisor": "Alexander Tanaka",
+   "Manager": "Michael Lee"
+  },
+  "Rachel Smith MD": {
+   "Supervisor": "Logan Lee",
+   "Manager": "William Kim"
+  },
+  "Randall Mercer": {
+   "Supervisor": "Jacob Sato",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Randy Finley": {
+   "Supervisor": "Emily Yamashita",
+   "Manager": "Michael Lee"
+  },
+  "Randy May": {
+   "Supervisor": "Emily Yamashita",
+   "Manager": "William Kim"
+  },
+  "Randy Mullins": {
+   "Supervisor": "Jackson Park",
+   "Manager": "Michael Lee"
+  },
+  "Raymond Mcgee": {
+   "Supervisor": "Ava Wong",
+   "Manager": "Olivia Tan"
+  },
+  "Rebecca Graham": {
+   "Supervisor": "Alexander Tanaka",
+   "Manager": "Michael Lee"
+  },
+  "Rebecca James": {
+   "Supervisor": "Brayden Wong",
+   "Manager": "John Smith"
+  },
+  "Rebecca Martin": {
+   "Supervisor": "Mason Gupta",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Rebecca Miller": {
+   "Supervisor": "Oliver Nguyen",
+   "Manager": "John Smith"
+  },
+  "Rebecca Thomas": {
+   "Supervisor": "Madison Kim",
+   "Manager": "Michael Lee"
+  },
+  "Rebecca Walker": {
+   "Supervisor": "Logan Lee",
+   "Manager": "Emily Chen"
+  },
+  "Regina Harper": {
+   "Supervisor": "Harper Wong",
+   "Manager": "William Kim"
+  },
+  "Renee Lucas": {
+   "Supervisor": "Zoe Yamamoto",
+   "Manager": "John Smith"
+  },
+  "Renee Martin": {
+   "Supervisor": "Lily Chen",
+   "Manager": "Michael Lee"
+  },
+  "Rhonda Martin DVM": {
+   "Supervisor": "Wyatt Kim",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Rhonda Sullivan": {
+   "Supervisor": "Jackson Park",
+   "Manager": "William Kim"
+  },
+  "Richard Barber": {
+   "Supervisor": "Alexander Tanaka",
+   "Manager": "Michael Lee"
+  },
+  "Richard Buchanan": {
+   "Supervisor": "Mason Gupta",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Richard Gordon": {
+   "Supervisor": "Zoe Yamamoto",
+   "Manager": "John Smith"
+  },
+  "Richard Oconnor": {
+   "Supervisor": "Mia Yamamoto",
+   "Manager": "Emily Chen"
+  },
+  "Richard Ortiz": {
+   "Supervisor": "Emily Yamashita",
+   "Manager": "Michael Lee"
+  },
+  "Richard Reyes": {
+   "Supervisor": "Olivia Suzuki",
+   "Manager": "Olivia Tan"
+  },
+  "Richard Smith": {
+   "Supervisor": "Mason Gupta",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Richard Sullivan": {
+   "Supervisor": "Mia Patel",
+   "Manager": "William Kim"
+  },
+  "Rickey Herrera": {
+   "Supervisor": "Wyatt Kim",
+   "Manager": "William Kim"
+  },
+  "Ricky Berger": {
+   "Supervisor": "Wyatt Kim",
+   "Manager": "Michael Lee"
+  },
+  "Robert Cook": {
+   "Supervisor": "Mia Yamamoto",
+   "Manager": "Emily Chen"
+  },
+  "Robert Elliott": {
+   "Supervisor": "Jackson Park",
+   "Manager": "Michael Lee"
+  },
+  "Robert Harris": {
+   "Supervisor": "Jackson Park",
+   "Manager": "William Kim"
+  },
+  "Robert Lara": {
+   "Supervisor": "Brayden Wong",
+   "Manager": "John Smith"
+  },
+  "Robert Lawrence": {
+   "Supervisor": "Olivia Suzuki",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Robert Lewis": {
+   "Supervisor": "Logan Lee",
+   "Manager": "Emily Chen"
+  },
+  "Robert Lopez": {
+   "Supervisor": "Logan Lee",
+   "Manager": "William Kim"
+  },
+  "Robert Miranda": {
+   "Supervisor": "Emma Park",
+   "Manager": "John Smith"
+  },
+  "Robert Oneal": {
+   "Supervisor": "Brayden Wong",
+   "Manager": "Michael Lee"
+  },
+  "Robert Perez": {
+   "Supervisor": "Nathan Patel",
+   "Manager": "Michael Lee"
+  },
+  "Robert Rios": {
+   "Supervisor": "Ethan Tan",
+   "Manager": "William Kim"
+  },
+  "Robert Smith": {
+   "Supervisor": "Carter Park",
+   "Manager": "Michael Lee"
+  },
+  "Robert Vasquez": {
+   "Supervisor": "Zoe Yamamoto",
+   "Manager": "John Smith"
+  },
+  "Robert White": {
+   "Supervisor": "William Park",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Robin Spencer": {
+   "Supervisor": "Ava Wong",
+   "Manager": "William Kim"
+  },
+  "Rodney Jackson": {
+   "Supervisor": "Austin Johnson",
+   "Manager": "William Kim"
+  },
+  "Roger Turner": {
+   "Supervisor": "Nathan Patel",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Ronald Anderson": {
+   "Supervisor": "Amelia Tanaka",
+   "Manager": "Emily Chen"
+  },
+  "Ronald Garcia": {
+   "Supervisor": "Elijah Yamaguchi",
+   "Manager": "Emily Chen"
+  },
+  "Ronald Houston": {
+   "Supervisor": "Ethan Tan",
+   "Manager": "John Smith"
+  },
+  "Ronald King": {
+   "Supervisor": "William Park",
+   "Manager": "John Smith"
+  },
+  "Ronnie Romero": {
+   "Supervisor": "Aiden Patel",
+   "Manager": "John Smith"
+  },
+  "Rose Jackson": {
+   "Supervisor": "Ava Wong",
+   "Manager": "William Kim"
+  },
+  "Rose Moore": {
+   "Supervisor": "Madison Kim",
+   "Manager": "John Smith"
+  },
+  "Roy Lynch": {
+   "Supervisor": "Brayden Wong",
+   "Manager": "Michael Lee"
+  },
+  "Ruben Horton": {
+   "Supervisor": "Elijah Yamaguchi",
+   "Manager": "Emily Chen"
+  },
+  "Russell Lee": {
+   "Supervisor": "Scarlett Chen",
+   "Manager": "John Smith"
+  },
+  "Russell Ramsey": {
+   "Supervisor": "Zoe Yamamoto",
+   "Manager": "Emily Chen"
+  },
+  "Ryan Bishop III": {
+   "Supervisor": "Evelyn Kimura",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Ryan Jackson": {
+   "Supervisor": "Olivia Wang",
+   "Manager": "Emily Chen"
+  },
+  "Ryan Jefferson": {
+   "Supervisor": "Elijah Yamaguchi",
+   "Manager": "John Smith"
+  },
+  "Ryan Khan": {
+   "Supervisor": "Nathan Patel",
+   "Manager": "Michael Lee"
+  },
+  "Ryan Payne": {
+   "Supervisor": "Scarlett Chen",
+   "Manager": "John Smith"
+  },
+  "Ryan Thompson": {
+   "Supervisor": "Olivia Wang",
+   "Manager": "Emily Chen"
+  },
+  "Sabrina Osborne": {
+   "Supervisor": "Jackson Park",
+   "Manager": "William Kim"
+  },
+  "Sabrina Santiago": {
+   "Supervisor": "Mia Patel",
+   "Manager": "Emily Chen"
+  },
+  "Samantha Harmon": {
+   "Supervisor": "Lily Chen",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Samantha Jones": {
+   "Supervisor": "Jacob Sato",
+   "Manager": "Emily Chen"
+  },
+  "Samantha Miller": {
+   "Supervisor": "Brayden Wong",
+   "Manager": "John Smith"
+  },
+  "Samantha Reeves": {
+   "Supervisor": "Abigail Suzuki",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Samantha Swanson": {
+   "Supervisor": "Ava Wong",
+   "Manager": "William Kim"
+  },
+  "Samantha Warner": {
+   "Supervisor": "Emily Yamashita",
+   "Manager": "John Smith"
+  },
+  "Samuel Beck": {
+   "Supervisor": "Evelyn Kimura",
+   "Manager": "John Smith"
+  },
+  "Samuel Blankenship": {
+   "Supervisor": "Brayden Wong",
+   "Manager": "John Smith"
+  },
+  "Samuel Douglas": {
+   "Supervisor": "Abigail Suzuki",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Samuel Gomez": {
+   "Supervisor": "Ava Wong",
+   "Manager": "William Kim"
+  },
+  "Samuel Gonzalez": {
+   "Supervisor": "Austin Johnson",
+   "Manager": "William Kim"
+  },
+  "Samuel Hanson": {
+   "Supervisor": "Alexander Tanaka",
+   "Manager": "Michael Lee"
+  },
+  "Samuel Mccoy": {
+   "Supervisor": "Landon Tanaka",
+   "Manager": "Emily Chen"
+  },
+  "Samuel Ramos": {
+   "Supervisor": "Nathan Patel",
+   "Manager": "Michael Lee"
+  },
+  "Samuel Spencer": {
+   "Supervisor": "Zoe Yamamoto",
+   "Manager": "John Smith"
+  },
+  "Sandra Alvarado": {
+   "Supervisor": "Sophia Chen",
+   "Manager": "Olivia Tan"
+  },
+  "Sandra Pierce": {
+   "Supervisor": "Emma Park",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Sandra Richardson": {
+   "Supervisor": "Amelia Tanaka",
+   "Manager": "Emily Chen"
+  },
+  "Sara Campbell": {
+   "Supervisor": "Logan Lee",
+   "Manager": "Emily Chen"
+  },
+  "Sara Chavez": {
+   "Supervisor": "Lily Chen",
+   "Manager": "Michael Lee"
+  },
+  "Sara Hall": {
+   "Supervisor": "Brayden Wong",
+   "Manager": "John Smith"
+  },
+  "Sara Juarez": {
+   "Supervisor": "Brayden Wong",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Sara Moreno": {
+   "Supervisor": "Mason Gupta",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Sara Rodriguez": {
+   "Supervisor": "Lily Chen",
+   "Manager": "Michael Lee"
+  },
+  "Sarah Becker": {
+   "Supervisor": "Zoe Yamamoto",
+   "Manager": "John Smith"
+  },
+  "Sarah Bennett": {
+   "Supervisor": "Emma Park",
+   "Manager": "Olivia Tan"
+  },
+  "Sarah Frazier": {
+   "Supervisor": "Ethan Nakamura",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Sarah Gutierrez": {
+   "Supervisor": "Emily Yamashita",
+   "Manager": "Michael Lee"
+  },
+  "Sarah Henderson": {
+   "Supervisor": "Ava Wong",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Sarah Hendricks": {
+   "Supervisor": "Olivia Wang",
+   "Manager": "William Kim"
+  },
+  "Sarah Keller": {
+   "Supervisor": "Zoe Yamamoto",
+   "Manager": "John Smith"
+  },
+  "Sarah Murray": {
+   "Supervisor": "Zoe Yamamoto",
+   "Manager": "John Smith"
+  },
+  "Sarah Newton": {
+   "Supervisor": "Zoe Yamamoto",
+   "Manager": "Olivia Tan"
+  },
+  "Sarah Ross": {
+   "Supervisor": "Jacob Sato",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Sarah Taylor": {
+   "Supervisor": "Carter Park",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Sarah Thomas": {
+   "Supervisor": "Logan Lee",
+   "Manager": "Emily Chen"
+  },
+  "Sarah Watts": {
+   "Supervisor": "Logan Lee",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Sarah Williams": {
+   "Supervisor": "Carter Park",
+   "Manager": "Michael Lee"
+  },
+  "Savannah Keller": {
+   "Supervisor": "Mia Patel",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Scott Bell": {
+   "Supervisor": "Brayden Wong",
+   "Manager": "John Smith"
+  },
+  "Scott Chang": {
+   "Supervisor": "Carter Park",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Scott Murphy": {
+   "Supervisor": "Olivia Wang",
+   "Manager": "Emily Chen"
+  },
+  "Scott Pierce": {
+   "Supervisor": "Charlotte Suzuki",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Scott Sanchez": {
+   "Supervisor": "Ethan Nakamura",
+   "Manager": "Emily Chen"
+  },
+  "Scott Scott": {
+   "Supervisor": "Elijah Yamaguchi",
+   "Manager": "John Smith"
+  },
+  "Scott Shaffer": {
+   "Supervisor": "Charlotte Suzuki",
+   "Manager": "William Kim"
+  },
+  "Scott Sutton": {
+   "Supervisor": "Jackson Park",
+   "Manager": "Michael Lee"
+  },
+  "Sean Gay": {
+   "Supervisor": "Mia Patel",
+   "Manager": "Olivia Tan"
+  },
+  "Sean Olson": {
+   "Supervisor": "Emily Yamashita",
+   "Manager": "Michael Lee"
+  },
+  "Sean Walters": {
+   "Supervisor": "Jacob Sato",
+   "Manager": "Emily Chen"
+  },
+  "Sean Williams": {
+   "Supervisor": "Mason Gupta",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Sergio Carrillo": {
+   "Supervisor": "Emma Park",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Seth Williamson": {
+   "Supervisor": "Sophia Sato",
+   "Manager": "John Smith"
+  },
+  "Shane Humphrey": {
+   "Supervisor": "Mia Yamamoto",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Shane Payne": {
+   "Supervisor": "Landon Tanaka",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Shane Schwartz": {
+   "Supervisor": "Carter Park",
+   "Manager": "Michael Lee"
+  },
+  "Shannon Hicks": {
+   "Supervisor": "Aiden Patel",
+   "Manager": "Olivia Tan"
+  },
+  "Shannon Holmes": {
+   "Supervisor": "Ava Wong",
+   "Manager": "William Kim"
+  },
+  "Shannon Hudson": {
+   "Supervisor": "Olivia Wang",
+   "Manager": "John Smith"
+  },
+  "Shannon Reyes": {
+   "Supervisor": "Ava Wong",
+   "Manager": "William Kim"
+  },
+  "Shari Martinez": {
+   "Supervisor": "Logan Lee",
+   "Manager": "Emily Chen"
+  },
+  "Sharon Bullock": {
+   "Supervisor": "Scarlett Chen",
+   "Manager": "John Smith"
+  },
+  "Sharon Meyers": {
+   "Supervisor": "Mason Gupta",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Sharon Smith": {
+   "Supervisor": "Elijah Yamaguchi",
+   "Manager": "Michael Lee"
+  },
+  "Sharon Stephenson": {
+   "Supervisor": "Jacob Sato",
+   "Manager": "Emily Chen"
+  },
+  "Shawn Rose": {
+   "Supervisor": "Ethan Tan",
+   "Manager": "William Kim"
+  },
+  "Sheena Williams": {
+   "Supervisor": "Logan Lee",
+   "Manager": "Emily Chen"
+  },
+  "Sheila Collins": {
+   "Supervisor": "Scarlett Chen",
+   "Manager": "John Smith"
+  },
+  "Shelley Hughes": {
+   "Supervisor": "Olivia Suzuki",
+   "Manager": "Olivia Tan"
+  },
+  "Shelley Watson": {
+   "Supervisor": "Jackson Park",
+   "Manager": "Michael Lee"
+  },
+  "Shelly Bell": {
+   "Supervisor": "Abigail Suzuki",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Shelly Huber": {
+   "Supervisor": "William Park",
+   "Manager": "John Smith"
+  },
+  "Sheri Hood": {
+   "Supervisor": "Ava Wong",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Sheri White": {
+   "Supervisor": "Ethan Tan",
+   "Manager": "William Kim"
+  },
+  "Sherry Hunt": {
+   "Supervisor": "Olivia Suzuki",
+   "Manager": "John Smith"
+  },
+  "Shirley Hayden": {
+   "Supervisor": "Scarlett Chen",
+   "Manager": "John Smith"
+  },
+  "Shirley Young": {
+   "Supervisor": "Olivia Suzuki",
+   "Manager": "Olivia Tan"
+  },
+  "Sierra Walker DDS": {
+   "Supervisor": "Emma Park",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Stacey Clark": {
+   "Supervisor": "Zoe Yamamoto",
+   "Manager": "John Smith"
+  },
+  "Stacey Lynch": {
+   "Supervisor": "Austin Johnson",
+   "Manager": "Michael Lee"
+  },
+  "Stacey Miller": {
+   "Supervisor": "Emma Park",
+   "Manager": "John Smith"
+  },
+  "Stacey Stokes": {
+   "Supervisor": "Elijah Yamaguchi",
+   "Manager": "Emily Chen"
+  },
+  "Stacy Morales": {
+   "Supervisor": "Elijah Yamaguchi",
+   "Manager": "Emily Chen"
+  },
+  "Stacy Sims": {
+   "Supervisor": "Jacob Sato",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Stacy Singh": {
+   "Supervisor": "Aiden Patel",
+   "Manager": "John Smith"
+  },
+  "Stacy Washington": {
+   "Supervisor": "Emily Yamashita",
+   "Manager": "Michael Lee"
+  },
+  "Stanley Hogan": {
+   "Supervisor": "Harper Wong",
+   "Manager": "Emily Chen"
+  },
+  "Stanley Moss": {
+   "Supervisor": "Elijah Yamaguchi",
+   "Manager": "Emily Chen"
+  },
+  "Stephanie Hammond": {
+   "Supervisor": "William Park",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Stephanie Holmes": {
+   "Supervisor": "Mia Patel",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Stephanie Johnson": {
+   "Supervisor": "Lucas Singh",
+   "Manager": "William Kim"
+  },
+  "Stephanie Lewis": {
+   "Supervisor": "Alexander Tanaka",
+   "Manager": "Michael Lee"
+  },
+  "Stephanie Neal": {
+   "Supervisor": "Layla Taniguchi",
+   "Manager": "Emily Chen"
+  },
+  "Stephanie Ryan": {
+   "Supervisor": "Nathan Patel",
+   "Manager": "Michael Lee"
+  },
+  "Stephanie Schultz": {
+   "Supervisor": "Charlotte Suzuki",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Stephanie Simpson": {
+   "Supervisor": "Emily Yamashita",
+   "Manager": "John Smith"
+  },
+  "Stephanie Stewart": {
+   "Supervisor": "Nathan Patel",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Stephanie Thompson": {
+   "Supervisor": "Emma Park",
+   "Manager": "John Smith"
+  },
+  "Stephen Foster": {
+   "Supervisor": "Ethan Tan",
+   "Manager": "William Kim"
+  },
+  "Stephen Lee": {
+   "Supervisor": "Noah Patel",
+   "Manager": "Michael Lee"
+  },
+  "Stephen Morris": {
+   "Supervisor": "Wyatt Kim",
+   "Manager": "Michael Lee"
+  },
+  "Stephen Palmer": {
+   "Supervisor": "Jackson Park",
+   "Manager": "William Kim"
+  },
+  "Steve Washington": {
+   "Supervisor": "Emma Park",
+   "Manager": "John Smith"
+  },
+  "Steven Buckley": {
+   "Supervisor": "Carter Park",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Steven Cline": {
+   "Supervisor": "Emily Yamashita",
+   "Manager": "John Smith"
+  },
+  "Steven Fox": {
+   "Supervisor": "Zoe Yamamoto",
+   "Manager": "John Smith"
+  },
+  "Steven Gates": {
+   "Supervisor": "Jacob Sato",
+   "Manager": "Emily Chen"
+  },
+  "Steven Moreno": {
+   "Supervisor": "Emma Park",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Steven Murillo": {
+   "Supervisor": "Carter Park",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Steven Nash": {
+   "Supervisor": "Mia Patel",
+   "Manager": "John Smith"
+  },
+  "Steven Nelson": {
+   "Supervisor": "Mia Patel",
+   "Manager": "Olivia Tan"
+  },
+  "Steven Sanders": {
+   "Supervisor": "Mia Patel",
+   "Manager": "John Smith"
+  },
+  "Steven Wall": {
+   "Supervisor": "Zoe Yamamoto",
+   "Manager": "Emily Chen"
+  },
+  "Steven Wilson": {
+   "Supervisor": "Nathan Patel",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Summer Mitchell": {
+   "Supervisor": "Sophia Sato",
+   "Manager": "John Smith"
+  },
+  "Susan Cook": {
+   "Supervisor": "Zoe Yamamoto",
+   "Manager": "John Smith"
+  },
+  "Susan Francis": {
+   "Supervisor": "Sophia Sato",
+   "Manager": "John Smith"
+  },
+  "Susan Hendrix": {
+   "Supervisor": "Carter Park",
+   "Manager": "William Kim"
+  },
+  "Susan Johnson": {
+   "Supervisor": "Emily Yamashita",
+   "Manager": "Olivia Tan"
+  },
+  "Susan Salazar": {
+   "Supervisor": "Carter Park",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Susan Wolf": {
+   "Supervisor": "Emma Park",
+   "Manager": "John Smith"
+  },
+  "Sydney Taylor": {
+   "Supervisor": "Harper Wong",
+   "Manager": "William Kim"
+  },
+  "Tabitha Ayala": {
+   "Supervisor": "Amelia Tanaka",
+   "Manager": "Michael Lee"
+  },
+  "Tamara Washington": {
+   "Supervisor": "Elijah Yamaguchi",
+   "Manager": "John Smith"
+  },
+  "Tammy Brewer": {
+   "Supervisor": "Layla Taniguchi",
+   "Manager": "Emily Chen"
+  },
+  "Tammy Clark": {
+   "Supervisor": "Aiden Patel",
+   "Manager": "Olivia Tan"
+  },
+  "Tammy Cochran": {
+   "Supervisor": "Madison Kim",
+   "Manager": "John Smith"
+  },
+  "Tammy Garcia": {
+   "Supervisor": "Jackson Park",
+   "Manager": "William Kim"
+  },
+  "Tammy Gould": {
+   "Supervisor": "Ava Wong",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Tammy Lane": {
+   "Supervisor": "Noah Patel",
+   "Manager": "Emily Chen"
+  },
+  "Tammy Mcneil": {
+   "Supervisor": "Austin Johnson",
+   "Manager": "Michael Lee"
+  },
+  "Tammy Rojas": {
+   "Supervisor": "Mia Patel",
+   "Manager": "Olivia Tan"
+  },
+  "Tammy Thomas": {
+   "Supervisor": "Ethan Nakamura",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Tanner Snyder": {
+   "Supervisor": "Jackson Park",
+   "Manager": "Olivia Tan"
+  },
+  "Taylor Frederick": {
+   "Supervisor": "Mia Patel",
+   "Manager": "William Kim"
+  },
+  "Taylor Harvey": {
+   "Supervisor": "Emily Yamashita",
+   "Manager": "John Smith"
+  },
+  "Taylor Nelson": {
+   "Supervisor": "Zoe Yamamoto",
+   "Manager": "Emily Chen"
+  },
+  "Teresa George": {
+   "Supervisor": "Mason Gupta",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Teresa Gilbert": {
+   "Supervisor": "Scarlett Chen",
+   "Manager": "John Smith"
+  },
+  "Teresa Nolan": {
+   "Supervisor": "Ava Wong",
+   "Manager": "Olivia Tan"
+  },
+  "Terri Carr": {
+   "Supervisor": "Brayden Wong",
+   "Manager": "Michael Lee"
+  },
+  "Terri Lopez": {
+   "Supervisor": "Dylan Kim",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Terri Nelson": {
+   "Supervisor": "Sophia Sato",
+   "Manager": "John Smith"
+  },
+  "Terry Young": {
+   "Supervisor": "Madison Kim",
+   "Manager": "Michael Lee"
+  },
+  "Theresa Brown": {
+   "Supervisor": "Brayden Wong",
+   "Manager": "Michael Lee"
+  },
+  "Theresa Moore": {
+   "Supervisor": "Logan Lee",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Theresa Perry": {
+   "Supervisor": "Jacob Sato",
+   "Manager": "Emily Chen"
+  },
+  "Theresa Russell": {
+   "Supervisor": "Nathan Patel",
+   "Manager": "Michael Lee"
+  },
+  "Theresa Stewart": {
+   "Supervisor": "Madison Kim",
+   "Manager": "John Smith"
+  },
+  "Theresa Wilson": {
+   "Supervisor": "Emma Park",
+   "Manager": "John Smith"
+  },
+  "Thomas Adams": {
+   "Supervisor": "Ava Wong",
+   "Manager": "William Kim"
+  },
+  "Thomas Blair": {
+   "Supervisor": "Noah Patel",
+   "Manager": "Michael Lee"
+  },
+  "Thomas Hayes": {
+   "Supervisor": "William Park",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Thomas Lewis": {
+   "Supervisor": "Aiden Patel",
+   "Manager": "John Smith"
+  },
+  "Thomas Martin": {
+   "Supervisor": "Wyatt Kim",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Thomas Waters": {
+   "Supervisor": "Sophia Sato",
+   "Manager": "John Smith"
+  },
+  "Thomas White": {
+   "Supervisor": "Carter Park",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Thomas Wiggins": {
+   "Supervisor": "Emily Yamashita",
+   "Manager": "William Kim"
+  },
+  "Tiffany Baldwin": {
+   "Supervisor": "Ava Wong",
+   "Manager": "William Kim"
+  },
+  "Tiffany Bates": {
+   "Supervisor": "Layla Taniguchi",
+   "Manager": "Olivia Tan"
+  },
+  "Tiffany Smith": {
+   "Supervisor": "Mia Patel",
+   "Manager": "Emily Chen"
+  },
+  "Tim Mcintosh II": {
+   "Supervisor": "Olivia Suzuki",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Timothy Bailey": {
+   "Supervisor": "Mason Gupta",
+   "Manager": "Olivia Tan"
+  },
+  "Timothy Butler": {
+   "Supervisor": "Elijah Yamaguchi",
+   "Manager": "Michael Lee"
+  },
+  "Timothy Cline": {
+   "Supervisor": "Wyatt Kim",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Timothy Fernandez": {
+   "Supervisor": "Madison Kim",
+   "Manager": "John Smith"
+  },
+  "Timothy Frederick": {
+   "Supervisor": "Brayden Wong",
+   "Manager": "Michael Lee"
+  },
+  "Timothy Grant": {
+   "Supervisor": "William Park",
+   "Manager": "John Smith"
+  },
+  "Timothy Green": {
+   "Supervisor": "Mia Patel",
+   "Manager": "William Kim"
+  },
+  "Timothy Henry": {
+   "Supervisor": "William Park",
+   "Manager": "John Smith"
+  },
+  "Timothy Huber": {
+   "Supervisor": "Sophia Sato",
+   "Manager": "John Smith"
+  },
+  "Timothy Huff": {
+   "Supervisor": "Aiden Patel",
+   "Manager": "John Smith"
+  },
+  "Timothy Johnson": {
+   "Supervisor": "Amelia Tanaka",
+   "Manager": "Emily Chen"
+  },
+  "Timothy Scott": {
+   "Supervisor": "Zoe Yamamoto",
+   "Manager": "William Kim"
+  },
+  "Timothy Taylor": {
+   "Supervisor": "Sophia Sato",
+   "Manager": "John Smith"
+  },
+  "Timothy Wilson": {
+   "Supervisor": "Carter Park",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Tina Carroll": {
+   "Supervisor": "Layla Taniguchi",
+   "Manager": "Emily Chen"
+  },
+  "Tina Garza": {
+   "Supervisor": "Noah Patel",
+   "Manager": "Michael Lee"
+  },
+  "Tina Harrington": {
+   "Supervisor": "Carter Park",
+   "Manager": "Michael Lee"
+  },
+  "Tina Ramirez": {
+   "Supervisor": "Zoe Yamamoto",
+   "Manager": "John Smith"
+  },
+  "Tina Roberts": {
+   "Supervisor": "Wyatt Kim",
+   "Manager": "Michael Lee"
+  },
+  "Todd Bennett": {
+   "Supervisor": "Carter Park",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Todd Floyd": {
+   "Supervisor": "Ethan Nakamura",
+   "Manager": "Emily Chen"
+  },
+  "Tommy Davies": {
+   "Supervisor": "Ava Wong",
+   "Manager": "Olivia Tan"
+  },
+  "Toni Rodriguez": {
+   "Supervisor": "Dylan Kim",
+   "Manager": "Michael Lee"
+  },
+  "Tony Jones": {
+   "Supervisor": "Lily Chen",
+   "Manager": "Michael Lee"
+  },
+  "Tonya Watts": {
+   "Supervisor": "Aiden Patel",
+   "Manager": "Olivia Tan"
+  },
+  "Tracey Malone": {
+   "Supervisor": "Carter Park",
+   "Manager": "Michael Lee"
+  },
+  "Tracey Park": {
+   "Supervisor": "William Park",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Tracy Dickerson MD": {
+   "Supervisor": "Landon Tanaka",
+   "Manager": "Emily Chen"
+  },
+  "Tracy Weaver": {
+   "Supervisor": "Olivia Wang",
+   "Manager": "Emily Chen"
+  },
+  "Travis Gardner": {
+   "Supervisor": "Evelyn Kimura",
+   "Manager": "John Smith"
+  },
+  "Travis Jones": {
+   "Supervisor": "Jacob Sato",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Trevor Turner": {
+   "Supervisor": "Olivia Wang",
+   "Manager": "Emily Chen"
+  },
+  "Trevor Villarreal": {
+   "Supervisor": "Elijah Yamaguchi",
+   "Manager": "Michael Lee"
+  },
+  "Tristan Holt": {
+   "Supervisor": "Emma Park",
+   "Manager": "John Smith"
+  },
+  "Troy Nguyen": {
+   "Supervisor": "Amelia Tanaka",
+   "Manager": "Emily Chen"
+  },
+  "Tyler Arroyo": {
+   "Supervisor": "Scarlett Chen",
+   "Manager": "John Smith"
+  },
+  "Tyler Duran": {
+   "Supervisor": "Evelyn Kimura",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Tyler Miller": {
+   "Supervisor": "Emma Park",
+   "Manager": "John Smith"
+  },
+  "Veronica Anderson": {
+   "Supervisor": "Zoe Yamamoto",
+   "Manager": "John Smith"
+  },
+  "Veronica Choi": {
+   "Supervisor": "Noah Patel",
+   "Manager": "Michael Lee"
+  },
+  "Veronica Howell": {
+   "Supervisor": "Elijah Yamaguchi",
+   "Manager": "John Smith"
+  },
+  "Veronica Martinez": {
+   "Supervisor": "William Park",
+   "Manager": "John Smith"
+  },
+  "Veronica Smith": {
+   "Supervisor": "Carter Park",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Veronica Wallace": {
+   "Supervisor": "Abigail Suzuki",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Vicki Collins": {
+   "Supervisor": "Dylan Kim",
+   "Manager": "Michael Lee"
+  },
+  "Vicki Moon": {
+   "Supervisor": "Zoe Yamamoto",
+   "Manager": "John Smith"
+  },
+  "Victor Rivera": {
+   "Supervisor": "Lily Chen",
+   "Manager": "Michael Lee"
+  },
+  "Victoria Anderson": {
+   "Supervisor": "Wyatt Kim",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Victoria Butler": {
+   "Supervisor": "Abigail Suzuki",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Victoria Collins": {
+   "Supervisor": "Isabella Wong",
+   "Manager": "Emily Chen"
+  },
+  "Victoria Douglas": {
+   "Supervisor": "Charlotte Suzuki",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Victoria Scott": {
+   "Supervisor": "Ava Wong",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Victoria Tran": {
+   "Supervisor": "Logan Lee",
+   "Manager": "William Kim"
+  },
+  "Vincent Hayes": {
+   "Supervisor": "Emma Park",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Vincent Nguyen": {
+   "Supervisor": "Elijah Yamaguchi",
+   "Manager": "Michael Lee"
+  },
+  "Virginia Caldwell": {
+   "Supervisor": "Lily Chen",
+   "Manager": "Michael Lee"
+  },
+  "Virginia Collins": {
+   "Supervisor": "Charlotte Suzuki",
+   "Manager": "William Kim"
+  },
+  "Virginia Diaz": {
+   "Supervisor": "Evelyn Kimura",
+   "Manager": "John Smith"
+  },
+  "Virginia Hoffman": {
+   "Supervisor": "Olivia Suzuki",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Virginia Lane": {
+   "Supervisor": "Sophia Sato",
+   "Manager": "John Smith"
+  },
+  "Virginia Mccormick": {
+   "Supervisor": "Zoe Yamamoto",
+   "Manager": "John Smith"
+  },
+  "Walter Decker": {
+   "Supervisor": "Madison Kim",
+   "Manager": "John Smith"
+  },
+  "Wanda Kelly": {
+   "Supervisor": "Logan Lee",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Wayne Jimenez": {
+   "Supervisor": "Isabella Wong",
+   "Manager": "Emily Chen"
+  },
+  "Wendy Anderson": {
+   "Supervisor": "Harper Wong",
+   "Manager": "William Kim"
+  },
+  "Wendy Church": {
+   "Supervisor": "Wyatt Kim",
+   "Manager": "Michael Lee"
+  },
+  "Wendy Lang": {
+   "Supervisor": "Sophia Sato",
+   "Manager": "John Smith"
+  },
+  "Wendy Mitchell": {
+   "Supervisor": "Nathan Patel",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Wendy Taylor": {
+   "Supervisor": "Madison Kim",
+   "Manager": "Michael Lee"
+  },
+  "Wesley Meyer": {
+   "Supervisor": "Zoe Yamamoto",
+   "Manager": "John Smith"
+  },
+  "Whitney Cross DVM": {
+   "Supervisor": "Charlotte Suzuki",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Whitney James": {
+   "Supervisor": "Noah Patel",
+   "Manager": "Emily Chen"
+  },
+  "Whitney Wheeler": {
+   "Supervisor": "Lucas Singh",
+   "Manager": "John Smith"
+  },
+  "William Austin": {
+   "Supervisor": "Olivia Suzuki",
+   "Manager": "Jennifer Nguyen"
+  },
+  "William Brown": {
+   "Supervisor": "Madison Kim",
+   "Manager": "John Smith"
+  },
+  "William Carey DVM": {
+   "Supervisor": "William Park",
+   "Manager": "John Smith"
+  },
+  "William Gallagher": {
+   "Supervisor": "Jackson Park",
+   "Manager": "John Smith"
+  },
+  "William Hall": {
+   "Supervisor": "Isabella Wong",
+   "Manager": "John Smith"
+  },
+  "William Little MD": {
+   "Supervisor": "Evelyn Kimura",
+   "Manager": "John Smith"
+  },
+  "William Melton": {
+   "Supervisor": "Jackson Park",
+   "Manager": "Michael Lee"
+  },
+  "William Morris": {
+   "Supervisor": "Ethan Tan",
+   "Manager": "John Smith"
+  },
+  "William Mueller": {
+   "Supervisor": "Mia Yamamoto",
+   "Manager": "Jennifer Nguyen"
+  },
+  "William Munoz": {
+   "Supervisor": "Zoe Yamamoto",
+   "Manager": "Emily Chen"
+  },
+  "William Scott": {
+   "Supervisor": "Evelyn Kimura",
+   "Manager": "Jennifer Nguyen"
+  },
+  "William Townsend": {
+   "Supervisor": "Mason Gupta",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Willie Flores": {
+   "Supervisor": "Oliver Nguyen",
+   "Manager": "John Smith"
+  },
+  "Xavier Little": {
+   "Supervisor": "Austin Johnson",
+   "Manager": "William Kim"
+  },
+  "Yesenia Bowers": {
+   "Supervisor": "Ava Wong",
+   "Manager": "William Kim"
+  },
+  "Zachary Collins": {
+   "Supervisor": "Jacob Sato",
+   "Manager": "Jennifer Nguyen"
+  },
+  "Zachary Ford": {
+   "Supervisor": "Ava Wong",
+   "Manager": "William Kim"
+  },
+  "Zachary Reyes": {
+   "Supervisor": "Madison Kim",
+   "Manager": "John Smith"
+  },
+  "Zachary Simpson": {
+   "Supervisor": "Mia Patel",
+   "Manager": "Emily Chen"
+  }
+ }
+}
